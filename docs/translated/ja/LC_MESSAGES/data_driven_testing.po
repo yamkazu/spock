@@ -1,0 +1,566 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 00:20\n"
+"PO-Revision-Date: 2013-02-14 00:27+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 4a899b9c90434b99a81bca99aea10c64
+#: ../../data_driven_testing.rst:4
+msgid "Data Driven Testing"
+msgstr "データ駆動テスト"
+
+# 0466f63f3a1c4b7aaba4248d82d8e1e5
+#: ../../data_driven_testing.rst:6
+msgid ""
+"Oftentimes, it is useful to exercise the same test code multiple times, with "
+"varying inputs and expected results. Spock's data driven testing support "
+"makes this a first class feature."
+msgstr ""
+"よくある状況で、入力値と結果のバリエーションを検証するために、同じテストコードを"
+"複数回実行したいことがあります。"
+"Spockでは、このような場合に備えて、データ駆動テストの素晴らしい機能をサポートしています。"
+
+# 1177345c8f9d49cd82d5f9968aaed72b
+#: ../../data_driven_testing.rst:10
+msgid "Introduction"
+msgstr "イントロダクション"
+
+# a14b8eca1033470da9a7b2ff7c3cb2f1
+#: ../../data_driven_testing.rst:12
+msgid "Suppose we want to specify the behavior of the ``Math.max`` method::"
+msgstr "まず\\ ``Math.max``\\ メソッドの振る舞いを定義したいとしましょう。"
+
+# 0cdcd5b718584210936dd325d2743db1
+#: ../../data_driven_testing.rst:24
+msgid ""
+"Although this approach is fine in simple cases like this one, it has some "
+"potential drawbacks:"
+msgstr ""
+"このやり方は、簡単なケースでは非常によい方法ですが、"
+"いくつかの欠点もあります。"
+
+# 4c5d7d90ea8a438f8e5fc12212e7c9eb
+#: ../../data_driven_testing.rst:26
+msgid "Code and data are mixed and cannot easily be changed independently"
+msgstr "コードとデータが混在しており、簡単にどちらかを変更できない"
+
+# eb93b174e22b4a819063453736443591
+#: ../../data_driven_testing.rst:27
+msgid "Data cannot easily be auto-generated or fetched from external sources"
+msgstr "データを簡単に自動生成したり、外部のリソースを読み込んだりできない"
+
+# 7ec40e0fd47a40298e5b3f57b713559f
+#: ../../data_driven_testing.rst:28
+msgid ""
+"In order to exercise the same code multiple times, it either has to be "
+"duplicated or extracted into a separate method"
+msgstr ""
+"同じコードを複数回実行したい場合は、コードを複製するか"
+"コードの一部を別のメソッドに抽出する必要がある"
+
+# f4e9681703f94e39a946c5faad1ce716
+#: ../../data_driven_testing.rst:29
+msgid ""
+"In case of a failure, it may not be immediately clear which inputs caused "
+"the failure"
+msgstr ""
+"実行が失敗した場合、失敗した時の入力値がすぐに分からない"
+
+# c687315a783943f5adf760be75b744ee
+#: ../../data_driven_testing.rst:30
+msgid ""
+"Exercising the same code multiple times does not benefit from the same "
+"isolation as executing separate methods does"
+msgstr ""
+"同じコードを複数回実行する場合は、実行をしているコードを別のメソッドに"
+"切り出さない限り、分離したメリットを得られない"
+
+# f5d4f2cb169e4baa8ba9f8fe8c3aacba
+#: ../../data_driven_testing.rst:32
+msgid ""
+"Spock's data-driven testing support tries to address these concerns. To get "
+"started, let's refactor above code into a data-driven feature method. First, "
+"we introduce three method parameters (called *data variables*) that replace "
+"the hard-coded integer values::"
+msgstr ""
+"Spockのデータ駆動テストのサポートはこの問題を解決します。"
+"はじめに上記のコードを、データ駆動テストの機能を利用した方法に、リファクタリング"
+"してみましょう。まず、ハードコーディングされた3つのinteger値を"
+"メソッドの引数（\\ *データ変数*\\ と呼びます）に置き換えます。"
+
+# 11fe98622e9c4cdc98829e2a0b463051
+#: ../../data_driven_testing.rst:45
+msgid ""
+"We have finished the test logic, but still need to supply the data values to "
+"be used. This is done in a ``where:`` block, which always comes at the end "
+"of the method. In the simplest (and most common) case, the ``where:`` block "
+"holds a *data table*."
+msgstr ""
+"テスト自体の実装はこれで完了ですが、これとは別に入力値となるデータの定義が"
+"必要です。これはメソッドの最後に記述する\\ ``where:``\\ ブロックで定義します。"
+"もっとも単純（そして最も一般的）なやり方は、\\ ``where:``\\ ブロックで\\ *データテーブル*\\ "
+"を使用する方法です。"
+
+# e08d5a0516d94e938ca032ae8163a131
+#: ../../data_driven_testing.rst:49
+msgid "Data Tables"
+msgstr "データテーブル"
+
+# 35c6dcc5074d417e92651708b5633187
+#: ../../data_driven_testing.rst:51
+msgid ""
+"Data tables are a convenient way to exercise a feature method with a fixed "
+"set of data values::"
+msgstr ""
+"データテーブルはフィーチャーメソッドに対し、固定のデータを定義する場合に"
+"便利な仕組みです。"
+
+# 7404df0fa57748e19de309872ee93bc4
+#: ../../data_driven_testing.rst:66
+msgid ""
+"The first line of the table, called the *table header*, declares the data "
+"variables. The subsequent lines, called *table rows*, hold the corresponding "
+"values. For each row, the feature method will get executed once; we call "
+"this an *iteration* of the method. If an iteration fails, the remaining "
+"iterations will nevertheless be executed. All failures will be reported."
+msgstr ""
+"テーブルの1行目は\\ *テーブルヘッダ*\\ と呼ばれ、変数名を定義します。"
+"この後に続く行は\\ *データ行*\\ と呼ばれ、ヘッダに対応する値を保持します。"
+"データ行は、行毎にそれぞれ個別のフィーチャーメソッドとして実行されます。"
+"これをメソッドの\\ *イテレーション*\\ と"
+"呼んでいます。もしイテレーションの途中で実行が失敗した場合は、"
+"そこで停止せずに、後続のイテレーションが実行されます。"
+"最後に、途中で失敗したイテレーションは、すべてレポートされます。"
+
+# 3d8d7cad48bb439cbad6339423e3686f
+#: ../../data_driven_testing.rst:71
+msgid ""
+"Data tables must have at least two columns. A single-column table can be "
+"written as::"
+msgstr ""
+"データテーブルは最低でも2つの列を定義する必要があります。もし1つしか列がない"
+"テーブルを定義したい場合は、以下のようにします。"
+
+# 772ec0bb95594c49b7bec4d03c89c273
+#: ../../data_driven_testing.rst:80
+msgid "Isolated Execution of Iterations"
+msgstr "イテレーション内での実行の分離"
+
+# 700dbf6d88614baf90e1e8d6873e5690
+#: ../../data_driven_testing.rst:82
+msgid ""
+"Iterations are isolated from each other in the same way as separate feature "
+"methods. Each iteration gets its own instance of the specification class, "
+"and the ``setup`` and ``cleanup`` methods will be called before and after "
+"each iteration, respectively."
+msgstr ""
+"イテレーションはそれぞれ別々のフィーチャーメソッドとして実行されます。"
+"各イテレーションはスペッククラス自身のインスタンスを取得し、"
+"\\ ``setup``\\ 、\\ ``cleanup``\\ メソッドを、それぞれのイテレーションの実行前"
+"後に呼び出します。"
+
+# a5cd028f8e8a47199b5e46f3ad077a22
+#: ../../data_driven_testing.rst:87
+msgid "Sharing of Objects between Iterations"
+msgstr "イテレーション間のオブジェクトの共有"
+
+# dee4f3c8eaea4a86bd0b8e5e0164d0d1
+#: ../../data_driven_testing.rst:89
+msgid ""
+"In order to share an object between iterations, it has to be kept in a "
+"``@Shared`` or static field."
+msgstr ""
+"イテレーション間でオブジェクトを共有するには、\\ ``@Share``\\ またはstatic"
+"フィールドで値を保持してください。"
+
+# f3afa0fc4f3b4e63aaa648a7d2483bcd
+#: ../../data_driven_testing.rst:91
+msgid ""
+"Only ``@Shared`` and static variables can be accessed from within a ``where:"
+"`` block."
+msgstr ""
+"``where:``\\ ブロックからは\\ ``@Share``\\ とstaticフィールド値へのアクセスのみが"
+"許可されています。"
+
+# 621629f586584ed9a1656c0f2a679eec
+#: ../../data_driven_testing.rst:93
+msgid ""
+"Note that such objects will also be shared with other methods. There is "
+"currently no good way to share an object just between iterations of the same "
+"method. If you consider this a problem, consider putting each method into a "
+"separate spec, all of which can be kept in the same file. This achieves "
+"better isolation at the cost of some boilerplate code."
+msgstr ""
+"このような\\ ``@Share``\\ やstaticなオブジェクトは、他のメソッドへも共有される"
+"ことに注意してください。特定のフィーチャーメソッド内に閉じて、イテレーション間で"
+"オブジェクトを共有する方法は、現在のところありません。もし、この問題を"
+"どうしても解決した場合は、ファイルを分けて、それぞれのフィーチャーメソッドを、"
+"別々のスペックファイルとすることを検討してください。"
+"だたし、これはファイルを分割することにより、実行に必要なコードを重複して"
+"記述しなければならない可能性があり、若干のコストが伴います。"
+
+# d20c07837ede4db2898487960c3abd9f
+#: ../../data_driven_testing.rst:98
+msgid "Syntactic Variations"
+msgstr "シンタックスのバリエーション"
+
+# dac29bcbd7554078bd40fd05170e88d0
+#: ../../data_driven_testing.rst:100
+msgid ""
+"The previous code can be tweaked in a few ways. First, since the ``where:`` "
+"block already declares all data variables, the method parameters can be "
+"omitted. [#methodParameters]_. Second, inputs and expected outputs can be "
+"separated with a double pipe symbol (``||``) to visually set them apart. "
+"With this, the code becomes::"
+msgstr ""
+"さきほどのコードは、さらにいくつかの改善が可能です。まずはじめに ``where:`` "
+"ブロックで定義したデータ変数の、メソッドのパラメータを省略できます\\ "
+"[#methodParameters]_\\ 。次に、入力値と出力の期待値を、視覚的に区別するために、"
+"論理和の記号（``||``）で区切ることができます。これを反映すると、コードは"
+"次のようになります。"
+
+# 80c7a12c7d5e4334b49e270be37d8a64
+#: ../../data_driven_testing.rst:118
+msgid "Reporting of Failures"
+msgstr "失敗のレポート"
+
+# 7b2a521ee540458aa0708c7eea3c86c1
+#: ../../data_driven_testing.rst:120
+msgid ""
+"Let's assume that our implementation of the ``max`` method has a flaw, and "
+"one of the iterations fails::"
+msgstr ""
+"``max``\\ メソッドの実装に誤りがあり、イテレーションの途中で失敗したとしましょう。"
+
+# b2231c9543ec431a868d28d4feb25098
+#: ../../data_driven_testing.rst:131
+msgid ""
+"The obvious question is: Which iteration failed, and what are its data "
+"values? In our example, it isn't hard to figure out that it's the second "
+"iteration that failed. At other times this can be more difficult or even "
+"impossible [#impossible]_. In any case, it would be nice if Spock made it "
+"loud and clear which iteration failed, rather than just reporting the "
+"failure. This is the purpose of the ``@Unroll`` annotation."
+msgstr ""
+"明白な質問: 何回目のイテレーションで失敗して、使用したデータは何でしょうか？"
+"この例では、2回目のイテレーションで失敗したことを把握するのは難しくありませんが、"
+"これが非常に困難、または不可能である場合もあります\\ [#impossible]_\\ 。このような状況では、"
+"単に失敗だけをレポートするのではなく、どのイテレーションが成功したのか、または失敗"
+"したのかがわかると、非常にレポートがわかりやすくなります。"
+"これが\\ ``@Unroll``\\ アノテーションの目的です。"
+
+# 5c340695809e403db2d546395c42f549
+#: ../../data_driven_testing.rst:137
+msgid "Method Unrolling"
+msgstr "メソッドのUnroll"
+
+# 3681a09667d14981b9b25a754bf6e156
+#: ../../data_driven_testing.rst:139
+msgid ""
+"A method annotated with ``@Unroll`` will have its iterations reported "
+"independently::"
+msgstr ""
+"``@Unroll``\\ が付与されたメソッドは、イテレーションをそれぞれ独立した"
+"レポートとして出力します。"
+
+# ae7038a650af4991a0acfb47f8e915c6
+#: ../../data_driven_testing.rst:146
+msgid ""
+"One reason why ``@Unroll`` isn't the default is that some execution "
+"environments (in particular IDEs) expect to be told the number of test "
+"methods in advance, and have certain problems if the actual number varies. "
+"Another reason is that ``@Unroll`` can drastically change the number of "
+"reported tests, which may not always be desirable."
+msgstr ""
+"（質問: なぜ\\ ``@Unroll``\\ がデフォルトになっていないのか？）\\ ``@Unroll``\\ がデフォルトになっていない理由の一つは、いくつか環境（特定のIDE）では、"
+"実行前にテストメソッドの数を把握できる事を前提に動作しており、"
+"実際に動作した後に、この数が変わっていると問題が起きる場合があるためです。"
+"他の理由としては、\\ ``@Unroll``\\ は劇的にテスト数を変化させるため、これは"
+"場合によっては望ましくない場合があります。"
+
+# a7d914ebd7c5410aa0dac26768d71809
+#: ../../data_driven_testing.rst:150
+msgid ""
+"Note that unrolling has no effect on how the method gets executed; it is "
+"only an alternation in reporting. Depending on the execution environment, "
+"the output will look something like::"
+msgstr ""
+"``@Unroll``\\ はメソッドの実行結果には影響を与えず、違いがあるのはレポート"
+"結果だけです。実行環境によりますが、出力は次のようなものになります。"
+
+# de1761bb36db420c96163d4342301318
+#: ../../data_driven_testing.rst:163
+msgid ""
+"This tells us that the second iteration (with index 1) failed. With a bit of "
+"effort, we can do even better::"
+msgstr ""
+"これは2回目のイテレーション（インデックスは1）が失敗したことを表しています。"
+"されにこれに手を加えることで、より見やすくできます。"
+
+# 51247900c646465898dc3ec7dcfced2e
+#: ../../data_driven_testing.rst:168
+msgid ""
+"This method name uses placeholders, denoted by a leading hash sign (``#``), "
+"to refer to data variables ``a``, ``b``, and ``c``. In the output, the "
+"placeholders will be replaced with concrete values::"
+msgstr ""
+"このように、メソッド名で変数の先頭にハッシュ（\\ ``#``\\ ）を付与すると、プレースホルダとして使用できます。"
+"この例では、データ変数の\\ ``a``\\ 、\\ ``b``\\ 、そして\\ ``c``\\ を参照するプレースホルダになります。"
+"このプレースホルダの出力は、以下のように実際に使用した値に置き換えられます。"
+
+# ed0e6339db344600a02eabbaf8dbc38c
+#: ../../data_driven_testing.rst:181
+msgid ""
+"Now we can tell at a glance that the ``max`` method failed for inputs ``7`` "
+"and ``0``. See `More on Unrolled Method Names`_ for further details on this "
+"topic."
+msgstr ""
+"このようにすることで、\\ ``max``\\ メソッドが入力値\\ ``7``\\ と\\ ``0``\\ で失敗したことが"
+"一目瞭然になります。このトピックの詳細は\\ `More on Unrolled Method Names`_\\ "
+"を参照してください。"
+
+# 2d93d581e04d4fd78ab4419aee3436c4
+#: ../../data_driven_testing.rst:184
+msgid ""
+"The ``@Unroll`` annotation can also be placed on a spec. This has the same "
+"effect as placing it on each data-driven feature method of the spec."
+msgstr ""
+"また、\\ ``@Unroll``\\ アノテーションはスペッククラスにも付与するすることできます。"
+"これはデータ駆動テストを行うフィーチャーメソッドそれぞれに、アノテーションを付与したのと"
+"同じ効果が得られます。"
+
+# f16420ab58004d298f5889935ce63e10
+#: ../../data_driven_testing.rst:188
+msgid "Data Pipes"
+msgstr "データパイプ"
+
+# 5b6e78d1e5b6499bb2e84892c419b112
+#: ../../data_driven_testing.rst:190
+msgid ""
+"Data tables aren't the only way to supply values to data variables. In fact, "
+"a data table is just syntactic sugar for one or more *data pipes*::"
+msgstr ""
+"データテーブルだけが、データ変数を定義する唯一の方法というわけではありません。"
+"データテーブルは、実際には1つ、または複数のデータパイプのシンタックスシュガー"
+"です。"
+
+# e0d7c74a0d954483a3fbf36d359e495a
+#: ../../data_driven_testing.rst:199
+msgid ""
+"A data pipe, indicated by the left-shift (``<<``) operator, connects a data "
+"variable to a *data provider*. The data provider holds all values for the "
+"variable, one per iteration. Any object that Groovy knows how to iterate "
+"over can be used as a data provider. This includes objects of type "
+"``Collection``, ``String``, ``Iterable``, and objects implementing the "
+"``Iterable`` contract. Data providers don't necessarily have to *be* the "
+"data (as in the case of a ``Collection``); they can fetch data from external "
+"sources like text files, databases and spreadsheets, or generate data "
+"randomly. Data providers are queried for their next value only when needed "
+"(before the next iteration)."
+msgstr ""
+"データパイプは左シフト（\\ ``<<``\\ ）演算子を使用し、データ変数に\\ *データプロバイダ*\\ "
+"を設定します。データプロバイダはすべての値を保持し、イテレーション毎に1つの値を"
+"使用します。データプロバイダには、Groovyでイテレーション可能なオブジェクトであれば、"
+"何でも使用することができます。これには\\ ``Collection``\\ 、\\ ``String``\\ "
+"や、\\ ``Iterable``\\ インタフェースを実装したオブジェクトが含まれます。"
+"データプロバイダは必ずしも、それがデータ（例えば\\ ``Collection``\\ ）である"
+"必要はありません。データプロバイダにはテキストファイルや、データベース、"
+"スプレッドシート、またはランダムにデータを生成するといった、外部リソースから"
+"データを取得することもできます。また、データプロバイダは値が必要になった時点"
+"（次のイテレーション前）で、はじめて次の値を取得します。"
+
+# 4e01b92407154b5e81b10b702afba51f
+#: ../../data_driven_testing.rst:207
+msgid "Multi-Variable Data Pipes"
+msgstr "データパイプで複数の値を扱う"
+
+# 0236bc7b56e847f48bc9b11b4917a106
+#: ../../data_driven_testing.rst:209
+msgid ""
+"If a data provider returns multiple values per iteration (as an object that "
+"Groovy knows how to iterate over), it can be connected to multiple data "
+"variables simultaneously. The syntax is somewhat similar to Groovy multi-"
+"assignment but uses brackets instead of parentheses on the left-hand side::"
+msgstr ""
+"もしデータプロバイダ（Groovyがイテレーション方法を知っているオブジェクト）が"
+"イテレーション毎に複数の値を返す場合は、複数のデータ変数に対し、同時に値を設定することが"
+"できます。シンタックスはGroovyのマルチ代入に似ていますが、左辺でパーレン（丸括弧）の"
+"代わりにブラケット（大括弧）を使用します。"
+
+# 9b011c7f9e2741799bbd4048f712d715
+#: ../../data_driven_testing.rst:221
+msgid ""
+"Data values that aren't of interest can be ignored with an underscore "
+"(``_``)::"
+msgstr ""
+"もし、使用しないデータがある場合は、アンダースコア（\\ ``_``\\ ）で無視することができます。"
+
+# d688a238e35d42fba87528138b0649c6
+#: ../../data_driven_testing.rst:228
+msgid "Data Variable Assignment"
+msgstr "データ変数への代入"
+
+# d2310a97c8b64be5b08b6577cbb5f063
+#: ../../data_driven_testing.rst:230
+msgid "A data variable can be directly assigned a value::"
+msgstr "データ変数へ直接代入することもできます。"
+
+# c41d51da10d24c2e8ebb907f7e102e69
+#: ../../data_driven_testing.rst:238
+msgid ""
+"Assignments are re-evaluated for every iteration. As already shown above, "
+"the right-hand side of an assignment may refer to other data variables::"
+msgstr ""
+"データ変数への代入はイテレーション毎に再評価されます。"
+"上記の様に、代入の際に他のデータ変数を参照することもできます。"
+
+# 5b4effa0cb50480e98ea05e2a7819629
+#: ../../data_driven_testing.rst:250
+msgid "Combining Data Tables, Data Pipes, and Variable Assignments"
+msgstr "データテーブル、データパイプ、代入の組み合わせ"
+
+# cc01193cad984cfe88acc3b171d34adf
+#: ../../data_driven_testing.rst:252
+msgid ""
+"Data tables, data pipes, and variable assignments can be combined as needed::"
+msgstr ""
+"必要に応じてデータテーブル、データパイプ、代入を組み合わせて"
+"使用できます。"
+
+# 86e090e6d3de4830af735a948f5334a1
+#: ../../data_driven_testing.rst:266
+msgid "Number of Iterations"
+msgstr "イテレーションの回数"
+
+# 973de7bfa21f48d6ab064bde4d2098fe
+#: ../../data_driven_testing.rst:268
+msgid ""
+"The number of iterations depends on how much data is available. Successive "
+"executions of the same method can yield different numbers of iterations. If "
+"a data provider runs out of values sooner than its peers, an exception will "
+"occur. Variable assignments don't affect the number of iterations. A ``where:"
+"`` block that only contains assignments yields exactly one iteration."
+msgstr ""
+"イテレーションの回数は、使用可能なデータがいくつあるかに依存しています。"
+"メソッドの繰り返し実行時に、各データプロバイダで異なるイテレーションの回数になる場合があります。"
+"このように、特定のデータプロバイダが、他のデータプロバイダよりも早く値が不足した場合は、"
+"例外がスローされます。ただし、代入はイテレーションの回数に影響を与えません。また、"
+"\\ ``where:``\\ ブロックが代入だけの場合は、1回だけイテレーションが実行されます。"
+
+# 8d62ae9e016c443ea30af53b38d271af
+#: ../../data_driven_testing.rst:274
+msgid "Closing of Data Providers"
+msgstr "データプロバイダのクローズ"
+
+# 6766ce46b56d415fa28f3aa627de2567
+#: ../../data_driven_testing.rst:276
+msgid ""
+"After all iterations have completed, the zero-argument ``close`` method is "
+"called on all data providers that have such a method."
+msgstr ""
+"全てのイテレーションが完了した後に、データプロバイダが引数なしの\\ ``close``\\ "
+"メソッドを持っている場合は、自動的にそのメソッドが呼び出されます。"
+
+# bb11a07849024123b86611cb4342243c
+#: ../../data_driven_testing.rst:280
+msgid "More on Unrolled Method Names"
+msgstr "Unrollメソッド名の詳細"
+
+# db9fb1bb33a34596897b7ba95aaadf32
+#: ../../data_driven_testing.rst:282
+msgid ""
+"An unrolled method name is similar to a Groovy ``GString``, except for the "
+"following differences:"
+msgstr ""
+"Unrollメソッド名はGroovyの\\ ``GString``\\ に似ていますが、以下の点が異なります。"
+
+# e92c52f3afc046e086db8b7769060d26
+#: ../../data_driven_testing.rst:284
+msgid ""
+"Expressions are denoted with ``#`` instead of ``$`` [#noDollar]_, and there "
+"is no equivalent for the ``${...}`` syntax"
+msgstr ""
+"式は\\ ``$``\\ [#noDollar]_\\ の代わりに\\ ``#``\\ を使用し\\ ``${...}``\\ に相当する"
+"シンタックスはありません"
+
+# e6022d8b761240b7b9d7a183ec412148
+#: ../../data_driven_testing.rst:285
+msgid "Expressions only support property access and zero-arg method calls"
+msgstr "式はプロパティへのアクセスと引数なしのメソッド呼び出しのみがサポートされています"
+
+# 474767da3d7e4712bbb8ca5f65265be9
+#: ../../data_driven_testing.rst:287
+msgid ""
+"Given a class ``Person`` with properties ``name`` and ``age``, and a data "
+"variable ``person`` of type ``Person``, the following are valid method "
+"names::"
+msgstr ""
+"``name``\\ と\\ ``age``\\ というプロパティを持つ\\ ``Person``\\ クラスがあり、"
+"この\\ ``Person``\\ の型が\\ ``person``\\ というデータ変数として参照可能な場合、"
+"以下のように使用できます。"
+
+# e871313701124699a9faf8d7893248f2
+#: ../../data_driven_testing.rst:293
+msgid ""
+"Non-string values (like ``#person`` above) are converted to Strings "
+"according to Groovy semantics."
+msgstr ""
+"非stringの値（例えば上記の\\ ``#person``\\ ）は、Groovyの挙動に従い"
+"Stringに変換されます。"
+
+# ff69824bd8194b58b7101bf182bc32d6
+#: ../../data_driven_testing.rst:295
+msgid "The following are invalid method names::"
+msgstr "次のメソッド名は正しくありません。"
+
+# ab5a7e6767bc4fd2a5bd2d24342ce151
+#: ../../data_driven_testing.rst:300
+msgid ""
+"If necessary, additional data variables can be introduced to hold more "
+"complex expression::"
+msgstr ""
+"必要に応じて、より複雑な式を保持するために、データ変数を活用することもできます。"
+
+# 20280307babe4d0f97e3f3d30782c577
+#: ../../data_driven_testing.rst:310
+msgid "Footnotes"
+msgstr "注記"
+
+# f5b54334e6434c5da708b6548b46b498
+#: ../../data_driven_testing.rst:311
+msgid ""
+"The idea behind allowing method parameters is to enable better IDE support. "
+"However, recent versions of IntelliJ IDEA recognize data variables "
+"automatically, and even infer their types from the values contained in the "
+"data table."
+msgstr ""
+"メソッドの引数として宣言する理由としては、よりIDEのサポートが得られる点です。"
+"しかし、最近のIntellij IDEAではデータ変数を自動的に認識し、さらには"
+"データテーブルに含まれている値からその型を推論します。"
+
+# adc914573b43417c8d1764943845a1cc
+#: ../../data_driven_testing.rst:315
+msgid ""
+"For example, a feature method could use data variables in its ``setup:`` "
+"block, but not in any conditions."
+msgstr ""
+"例えば、フィーチャーメソッドはデータ変数を\\ ``setup:``\\ ブロックの中で"
+"使用できるなど、様々な条件で使用されます。"
+
+# f28aa80e0a014cc3a16217f7754c8a77
+#: ../../data_driven_testing.rst:317
+msgid "Groovy syntax does not allow dollar signs in method names."
+msgstr "Groovyのシンタックスはメソッド名にドル記号を使用できません。"

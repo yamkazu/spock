@@ -1,0 +1,39 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-13 23:27\n"
+"PO-Revision-Date: 2013-02-13 23:33+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 9bb23a02df204120960f3d6140088e8b
+#: ../../introduction.rst:2
+msgid "Introduction"
+msgstr "イントロダクション"
+
+# a4316a1c34094693ac074aee7ffb6689
+#: ../../introduction.rst:4
+msgid ""
+"Spock is a testing and specification framework for Java and Groovy "
+"applications. What makes it stand out from the crowd is its beautiful and "
+"highly expressive specification language. Thanks to its JUnit runner, Spock "
+"is compatible with most IDEs, build tools, and continuous integration "
+"servers. Spock is inspired from JUnit, jMock, RSpec, Groovy, Scala, Vulcans, "
+"and other fascinating life forms."
+msgstr ""
+"SpockはJava、Groovy向けの、テストまたは仕様フレームワークです。"
+"他のツールと比べて何より特徴的なのは、その美しく表現力の高い仕様記述言語です。"
+"JUnitランナーの仕組みのお陰で、SpockはほとんどのIDEや、ビルドツール、"
+"継続的インテグレーションサーバと互換性があります。"
+"SpockはJUnit、JMock、RSpec、Groovy、Scala、Vulcans、その他な魅力的なツールからインスパイアされました。"

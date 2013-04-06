@@ -1,0 +1,795 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 00:20\n"
+"PO-Revision-Date: 2013-02-14 00:28+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 08ab7f2b18a449cea7760d429096dc34
+#: ../../new_and_noteworthy.rst:2
+msgid "New and Noteworthy"
+msgstr "新機能と主な変更点"
+
+# dbb38b93171e4d6bbf16a0158fcae396
+#: ../../new_and_noteworthy.rst:5
+msgid "0.7"
+msgstr "0.7"
+
+# 369fdf241ee74effbcf8d72e985dd8fd
+#: ../../new_and_noteworthy.rst:8
+msgid "Snapshot Repository Moved"
+msgstr "スナップショットリポジトリの移動"
+
+# be8a8eff0f4d4a03898b98886552d5c9
+#: ../../new_and_noteworthy.rst:10
+msgid ""
+"Spock snapshots are now available from http://oss.sonatype.org/content/"
+"repositories/snapshots/."
+msgstr ""
+"Spockのスナップショットは http://oss.sonatype.org/content/repositories/snapshots/ "
+"から取得できるようになりました。"
+
+# 11f197e51a824d909e00fbe9a9fa9208
+#: ../../new_and_noteworthy.rst:13
+msgid "New Reference Documentation"
+msgstr "新しいリファレンスドキュメント"
+
+# 3ca45373cecc416b99c823a2a574c7ac
+#: ../../new_and_noteworthy.rst:15
+msgid ""
+"The new Spock reference documentation is available at http://docs."
+"spockframework.org. It will gradually replace the documentation at http://"
+"wiki.spockframework.org. Each Spock version is documented separately (e.g. "
+"http://docs.spockframework.org/en/spock-0.7-groovy-1.8). Documentation for "
+"the latest Spock snapshot is at http://docs.spockframework.org/en/latest. As "
+"of Spock 0.7, the chapters on :ref:`DataDrivenTesting` and :ref:"
+"`InteractionBasedTesting` are complete."
+msgstr ""
+"Spockの新しいリファレンスドキュメントは\\ http://docs.spockframework.org\\ で"
+"参照できます。ここには\\ http://wiki.spockframework.org\\ にあるドキュメントを"
+"徐々に移動していきます。このドキュメントは各バージョン毎に公開しています"
+"（例えば\\ http://docs.spockframework.org/en/spock-0.7-groovy-1.8\\ ）。"
+"スナップショットの最新ドキュメントは"
+"\\ http://docs.spockframework.org/en/latest\\ を参照してください。"
+"Spock 0.7の時点では\\ :ref:`DataDrivenTesting`\\ と\\ :ref:"
+"`InteractionBasedTesting`\\ の記述が完了しています。"
+
+# 200b379385ab41c0bc188ca1ccfad1ff
+#: ../../new_and_noteworthy.rst:22
+msgid "Improved Mocking Failure Message for ``TooManyInvocationsError``"
+msgstr "``TooManyInvocationsError``\\ のモッキング失敗メッセージの改善"
+
+# 1da974dd4eec4fb68038c88be6f03c27
+#: ../../new_and_noteworthy.rst:24
+msgid ""
+"The diagnostic message accompanying a ``TooManyInvocationsError`` has been "
+"greatly improved. Here is an example::"
+msgstr ""
+"\\ ``TooManyInvocationsError``\\ 発生時の診断メッセージが大幅に改善されました。"
+"以下に例を示します。"
+
+# 7fc0a958c54c487e9a20ef4b6d79f101
+#: ../../new_and_noteworthy.rst:37
+msgid ":ref:`Reference Documentation <ShowAllMatchingInvocations>`."
+msgstr ":ref:`リファレンスドキュメント <ShowAllMatchingInvocations>`"
+
+# 3468d7c91a6b4137ad4c4efc8486a36b
+#: ../../new_and_noteworthy.rst:40
+msgid "Improved Mocking Failure Message for ``TooFewInvocationsError``"
+msgstr "``TooFewInvocationsError``\\ のモッキング失敗メッセージの改善"
+
+# 8f2095978b5244a38b507843bad24aa5
+#: ../../new_and_noteworthy.rst:42
+msgid ""
+"The diagnostic message accompanying a ``TooFewInvocationsError`` has been "
+"greatly improved. Here is an example::"
+msgstr ""
+"\\ ``TooFewInvocationsError``\\ 発生時の診断メッセージが大幅に改善されました。"
+"以下に例を示します。"
+
+# 596f547cb9764743bedae29f4028a99f
+#: ../../new_and_noteworthy.rst:55
+msgid ":ref:`Reference Documentation <ShowUnmatchedInvocations>`."
+msgstr ":ref:`リファレンスドキュメント <ShowUnmatchedInvocations>`"
+
+# 8d602600678642628fe6ae0b822b96b4
+#: ../../new_and_noteworthy.rst:58
+msgid "Stubs"
+msgstr "スタブ"
+
+# 50e5e3cbf3cc4977a6e010cab5b60caa
+#: ../../new_and_noteworthy.rst:60
+msgid "Besides mocks, Spock now has explicit support for stubs::"
+msgstr "従来のモックオブジェクトに加えて、スタブのサポートを追加しました。"
+
+# 384e04ab6f51420c82acac65cdd6ea84
+#: ../../new_and_noteworthy.rst:64
+msgid ""
+"A stub is a restricted form of mock object that responds to invocations "
+"without ever demanding them. Other than not having a cardinality, a stub's "
+"interactions look just like a mock's interactions. Using a stub over a mock "
+"is an effective way to communicate its role to readers of the specification."
+msgstr ""
+"スタブはモックオブジェクトの機能制限版で、モックに比べ"
+"より本物の値に近い値を返します。また、スタブは多重度を定義できない以外は、"
+"モックのインタラクションと同じよう見えますが、"
+"読み手に対し役割をより明確にできる効果があります。"
+
+# 6bd77e14626f47c8824bbbf52b08ba7a
+#: ../../new_and_noteworthy.rst:68
+msgid ":ref:`Reference Documentation <Stubs>`."
+msgstr ":ref:`リファレンスドキュメント <Stubs>`"
+
+# ab9330329d8e4166b4cce2a4661e10b2
+#: ../../new_and_noteworthy.rst:71
+msgid "Spies"
+msgstr "スパイ"
+
+# 320823081dc149c0b7d10396ce12f3e1
+#: ../../new_and_noteworthy.rst:73
+msgid "Besides mocks, Spock now has support for spies::"
+msgstr "従来のモックオブジェクトに加えて、スパイのサポートを追加しました。"
+
+# 3f9a416e5b5747bbb6e022c8200b9601
+#: ../../new_and_noteworthy.rst:77
+msgid ""
+"A spy sits atop a real object, in this example an instance of class "
+"``Person``. All invocations on the spy that don't match an interaction are "
+"delegated to that object. This allows to listen in on and selectively change "
+"the behavior of the real object. Furthermore, spies can be used as partial "
+"mocks."
+msgstr ""
+"スパイは、この例の\\ ``Person``\\ インスタンスのように本物のオブジェクト上に"
+"構築されます。"
+"インタラクションが一致しないスパイに対するすべての呼び出しは、本物のオブジェクトへと処理が委譲されます。"
+"このようにスパイを使用することで、本物のオブジェクトの必要な部分のみ振る舞いを変更し、"
+"またその呼び出しを監視することができます。さらに、スパイはパーチャルモックとして使用することも可能です。"
+
+# 6372af8b0eb840088e6c224e26d21953
+#: ../../new_and_noteworthy.rst:81
+msgid ":ref:`Reference documentation <Spies>`."
+msgstr ":ref:`リファレンスドキュメント <Spies>`"
+
+# bb7774c72f224f3b9a1c18c4bbd8a405
+#: ../../new_and_noteworthy.rst:84
+msgid "Declaring Interactions at Mock Creation Time"
+msgstr "モック作成時のインタラクション定義"
+
+# 51a0bb4ee63d48c4a06c759ab1b5326e
+#: ../../new_and_noteworthy.rst:86
+msgid "Interactions can now be declared at mock creation time::"
+msgstr "モック作成時にインタラクションを定義できようになりました。"
+
+# ee4ce1e2a9154a13a4c9cab8ce94e5e8
+#: ../../new_and_noteworthy.rst:93
+msgid "This feature is particularly attractive for `Stubs`_."
+msgstr "この機能は、特に\\ `Stubs`_\\ で便利な機能です。"
+
+# 01e52ef4ab1c4f99871a03fb20252949
+#: ../../new_and_noteworthy.rst:95
+msgid ""
+":ref:`Reference Documentation <DeclaringInteractionsAtMockCreationTime>`."
+msgstr ":ref:`リファレンスドキュメント <DeclaringInteractionsAtMockCreationTime>`"
+
+# 808cde3713c44f548d3834e9b12c6506
+#: ../../new_and_noteworthy.rst:98
+msgid "Groovy Mocks"
+msgstr "Groovyモック"
+
+# 899eaf86961a469fb192f0ed33c9a348
+#: ../../new_and_noteworthy.rst:100
+msgid "Spock now offers specialized mock objects for spec'ing Groovy code::"
+msgstr "Groovyのコードに特化した特別なモックオブジェクトの機能を追加しました。"
+
+# 1621812f68d746bba4da94dc8754f81c
+#: ../../new_and_noteworthy.rst:106
+msgid ""
+"A Groovy mock automatically implements ``groovy.lang.GroovyObject``. It "
+"allows stubbing and mocking of dynamic methods just like for statically "
+"declared methods. When a Groovy mock is called from Java rather than Groovy "
+"code, it behaves like a regular mock."
+msgstr ""
+"Groovyモックは、自動的に\\ ``groovy.lang.GroovyObject``\\ を実装します。"
+"これは静的に定義されたメソッドと同じように、動的なメソッドに対する"
+"スタビングとモッキングが可能です。"
+"Groovyモックは、GroovyのコードではなくJavaから呼び出されると、"
+"通常のモックと同じように振舞います。"
+
+# 00e0d99bd3374faea997c2b890ccc9b9
+#: ../../new_and_noteworthy.rst:110
+msgid ":ref:`Reference Documentation <GroovyMocks>`."
+msgstr ":ref:`リファレンスドキュメント <GroovyMocks>`"
+
+# 5bb537e7b305435489404ac90991159d
+#: ../../new_and_noteworthy.rst:113
+msgid "Global Mocks"
+msgstr "グローバルモック"
+
+# 81a920bcdad343c4bd6a75227f1d150d
+#: ../../new_and_noteworthy.rst:115
+msgid "A Groovy mock can be made *global*::"
+msgstr "Groovyモックは\\ *グローバル*\\ に作成できます。"
+
+# db213c8db02044869ae639ffd61adddf
+#: ../../new_and_noteworthy.rst:119
+msgid ""
+"A global mock can only be created for a class type. It effectively replaces "
+"all instances of that type and makes them amenable to stubbing and mocking. "
+"(You may know this behavior from Groovy's ``MockFor`` and ``StubFor`` "
+"facilities.) Furthermore, a global mock allows mocking of the type's "
+"constructors and static methods."
+msgstr ""
+"このグローバルモックはクラスの型にのみ使用できます。"
+"これは、その型の全てのインスタンスを差し替え、スタビングとモッキングは"
+"これらの型全てに影響を与えます"
+"（このような動作をするGroovyの\\ ``MockFor``\\ と\\ ``StubFor``\\ をご存知かも知れません）。"
+"さらにグローバルモックは、その型のコンストラクタ、およびstaticメソッドのモッキング"
+"が可能です。"
+
+# dbb0f156f5c54f68b59be76ea7f89f96
+#: ../../new_and_noteworthy.rst:123
+msgid ":ref:`Reference Documentation <MockingAllInstancesOfAType>`."
+msgstr ":ref:`リファレンスドキュメント <MockingAllInstancesOfAType>`"
+
+# 93f7b912a7fa43459407ccf29bbdd92b
+#: ../../new_and_noteworthy.rst:126
+msgid "Grouping Conditions with Same Target Object"
+msgstr "コンディションのグループ化"
+
+# 92bce91197404b5e8a01f5db07993b44
+#: ../../new_and_noteworthy.rst:128
+msgid ""
+"Inspired from Groovy's ``Object.with`` method, the ``Specification.with`` "
+"method allows to group conditions involving the same target object::"
+msgstr ""
+"この機能はGroovyの\\ ``Object.with``\\ からインスパイアされました。"
+"これは\\ ``Specification.with``\\ メソッドを使用することで、特定の対象オブジェクトに"
+"対するコンディションのグループ化が行えます。"
+
+# a5ff513c12f1412bbf32b5049575ebf4
+#: ../../new_and_noteworthy.rst:141
+msgid "Grouping Interactions with Same Target Object"
+msgstr "インタラクションのグループ化"
+
+# 609001a4f84a45f09f30321d173002d3
+#: ../../new_and_noteworthy.rst:143
+msgid "The ``with`` method can also be used for grouping interactions::"
+msgstr "``with``\\ メソッドはインタラクションのグループ化にも使用できます。"
+
+# 5d89986cbb0743c3957a66e351a20a75
+#: ../../new_and_noteworthy.rst:158
+msgid ":ref:`Reference Documentation <GroupingInteractionsWithSameTarget>`."
+msgstr ":ref:`リファレンスドキュメント <GroupingInteractionsWithSameTarget>`"
+
+# 014fb4db0b3541aa8da0948e65bfa4fc
+#: ../../new_and_noteworthy.rst:161
+msgid "Polling Conditions"
+msgstr "ポーリングコンディション"
+
+# e7afca6f3b74442d9c562f99673a03f9
+#: ../../new_and_noteworthy.rst:163
+msgid ""
+"``spock.util.concurrent.PollingConditions`` joins ``AsyncConditions`` and "
+"``BlockingVariable(s)`` as another utility for testing asynchronous code::"
+msgstr ""
+"\\ ``AsyncConditions``\\ と\\ ``BlockingVariable(s)``\\ "
+"を統合した、非同期のコードをテストするためのユーティリティを追加しました。"
+
+# 1ad14d486fa0460c917c43d7f83c82a9
+#: ../../new_and_noteworthy.rst:187
+msgid "Experimental DSL Support for Eclipse"
+msgstr "Eclipse用の実験的なDSLサポート"
+
+# 8d37f89bf6c24c09bd5e2690be9e6ee6
+#: ../../new_and_noteworthy.rst:189
+msgid ""
+"Spock now ships with a DSL descriptor that lets Groovy Eclipse better "
+"understand certain parts of Spock's DSL. The descriptor is automatically "
+"detected and activated by the IDE. Here is an example::"
+msgstr ""
+"Groovy EclipseがSpockのDSLを理解しやすいように、"
+"Groovy EclipseためのDSLディスクリプタを同封するようにしました。"
+"このディスクリプタは、IDEによって自動的に検出され有効になります。"
+"以下に例を示します。"
+
+# bbb7ad40dbdc4350b911c76c657820f1
+# 8a2b21b76c124a9b943f652d6285086e
+#: ../../new_and_noteworthy.rst:202 ../../new_and_noteworthy.rst:227
+msgid "Another example::"
+msgstr "他の例では以下のようになります。"
+
+# 6bce2425c7224c7d9f4144ff9e107a4a
+#: ../../new_and_noteworthy.rst:209
+msgid ""
+"DSL support is activated for Groovy Eclipse 2.7.1 and higher. If necessary, "
+"it can be deactivated in the Groovy Eclipse preferences."
+msgstr ""
+"DSLのサポートは、Groovy Eclipse 2.7.1以降で使用できます。"
+"これは、Groovy Eclipseの設定で無効にすることもできます。"
+
+# f5185538400d4360a8ee11b25d772d92
+#: ../../new_and_noteworthy.rst:213
+msgid "Experimental DSL Support for IntelliJ IDEA"
+msgstr "IntelliJ IDEA用の実験的なDSLサポート"
+
+# b00969e9752b4131b5d068dbe6ee5c40
+#: ../../new_and_noteworthy.rst:215
+msgid ""
+"Spock now ships with a DSL descriptor that lets Intellij IDEA better "
+"understand certain parts of Spock's DSL. The descriptor is automatically "
+"detected and activated by the IDE. Here is an example::"
+msgstr ""
+"Intellij IDEAがSpockのDSLを理解しやすいように、"
+"Intellij IDEAためのDSLディスクリプタを同封するようにしました。"
+"このディスクリプタは、IDEによって自動的に検出され有効になります。"
+"以下に例を示します。"
+
+# ba22de07b0f2483d9b5a7cabc465ffc5
+#: ../../new_and_noteworthy.rst:234
+msgid "DSL support is activated for IntelliJ IDEA 11.1 and higher."
+msgstr "DSLのサポートはIntelliJ IDEA 11.1以降で使用できます。"
+
+# 310988fbfbe24db9a48e6ef37e643ee2
+#: ../../new_and_noteworthy.rst:237
+msgid "Splitting up Class Specification"
+msgstr "Specificationクラスの分割"
+
+# 6f960b1a0167422facced0671cd9f9ee
+#: ../../new_and_noteworthy.rst:239
+msgid ""
+"Parts of class ``spock.lang.Specification`` were pulled up into two new "
+"super classes: ``spock.lang.MockingApi`` now contains all mocking-related "
+"methods, and ``org.spockframework.lang.SpecInternals`` contains internal "
+"methods which aren't meant to be used directly."
+msgstr ""
+"\\ ``spock.lang.Specification``\\ クラスの一部を、2つのスーパークラスに"
+"引き上げました。ひとつは\\ ``spock.lang.MockingApi``\\ で、これにはモックに"
+"関連する全てのメソッドが含まれます。そして、"
+"\\ ``org.spockframework.lang.SpecInternals``\\ には、"
+"直接使用することを意図していない内部メソッドが含まれます。"
+
+# cd86ce7961454a6795acb1e5353961c6
+#: ../../new_and_noteworthy.rst:244
+msgid "Improved Failure Messages for ``notThrown`` and ``noExceptionThrown``"
+msgstr "``notThrown``\\ と\\ ``noExceptionThrown``\\ の失敗メッセージの改善"
+
+# 6076601300d04b24878a49790ed6fce0
+#: ../../new_and_noteworthy.rst:246
+msgid ""
+"Instead of just passing through exceptions, ``Specification.notThrown`` and "
+"``Specification.noExceptionThrown`` now fail with messages like::"
+msgstr ""
+"単に例外を通知する代わりに、\\ ``Specification.notThrown``\\ "
+"と\\ ``Specification.noExceptionThrown``\\ は、以下のような失敗メッセージを表示するようになりました。"
+
+# a2bd5737705641eaa073c8054431c65c
+#: ../../new_and_noteworthy.rst:254
+msgid "``HamcrestSupport.expect``"
+msgstr "``HamcrestSupport.expect``"
+
+# e28382d49d7e41339d5a6bbc108fad56
+#: ../../new_and_noteworthy.rst:256
+msgid ""
+"Class ``spock.util.matcher.HamcrestSupport`` has a new ``expect`` method "
+"that makes [Hamcrest](http://code.google.com/p/hamcrest/) assertions read "
+"better in then-blocks::"
+msgstr ""
+"``spock.util.matcher.HamcrestSupport``\\ クラスに新たな\\ ``expect``\\ "
+"メソッドを追加しました。これを使用することで、thenブロック内の"
+"\\ `Hamcrest <http://code.google.com/p/hamcrest/>`_\\ のアサーションが、"
+"より読みやすくなります。"
+
+# a6e4ef2c0df44f8289110d4a1e9f6514
+#: ../../new_and_noteworthy.rst:266
+msgid "@Beta"
+msgstr "@Beta"
+
+# 746a41713f77466287e69a2fd221c99d
+#: ../../new_and_noteworthy.rst:268
+msgid ""
+"Recently introduced classes and methods may be annotated with @Beta, as a "
+"sign that they may still undergo incompatible changes. This gives us a "
+"chance to incorporate valuable feedback from our users. (Yes, we need your "
+"feedback!) Typically, a @Beta annotation is removed within one or two "
+"releases."
+msgstr ""
+"最近追加されたクラスや、メソッドには@Betaアノテーションが付与されている"
+"場合があります。これは今後、互換性のない変更が行われる可能性があることを表しています。"
+"さらにこれが、ユーザーからの貴重なフィードバックを得る機会になることも期待しています"
+"（あなたのフィードバックをお待ちしています！）。"
+"多くの場合、@Betaは1回、または2回のリリース内で削除されます。"
+
+# f33f8e9895114877b9a7c9c4e6c5af81
+# 3855a854ac244614b38a396615b8481a
+#: ../../new_and_noteworthy.rst:273 ../../new_and_noteworthy.rst:408
+msgid "Fixed Issues"
+msgstr "修正済みの課題"
+
+# b97c26fd9c0d469cac3c6c8e57e96450
+#: ../../new_and_noteworthy.rst:275
+msgid ""
+"See the `issue tracker <http://issues.spockframework.org/list?can=1&q=label"
+"%3AMilestone-0.7>`_ for a list of fixed issues."
+msgstr ""
+"修正された問題の一覧は、"
+"\\ `課題管理システム <http://issues.spockframework.org/list?can=1&q=label%3AMilestone-0.7>`_\\ "
+"を参照してください。"
+
+# 32d3fe2dbac34c2882e7287b7286218a
+#: ../../new_and_noteworthy.rst:278
+msgid "0.6"
+msgstr "0.6"
+
+# 18fdf5ec264444a6990df38672d76883
+#: ../../new_and_noteworthy.rst:281
+msgid "Mocking Improvements"
+msgstr "モッキングの改善"
+
+# 5e2a1ef5922144268f5a0bc693f0f163
+#: ../../new_and_noteworthy.rst:283
+msgid ""
+"The mocking framework now provides better diagnostic messages in some cases."
+msgstr ""
+"モックフレームワークでは、いくつかのケースでよりわかりやすい診断メッセージを提供するようにしました。"
+
+# 9aff8133240445d8bdcbeecb42ea8f52
+#: ../../new_and_noteworthy.rst:285
+msgid ""
+"Multiple result declarations can be chained. The following causes method bar "
+"to throw an ``IOException`` when first called, return the numbers one, two, "
+"and three on the next calls, and throw a ``RuntimeException`` for all "
+"subsequent calls::"
+msgstr ""
+"また、複数のレスポンスの定義をチェーンできるようになっています。"
+"以下は、最初のbarメソッドの呼び出しに\\ ``IOException``\\ をスローし、 "
+"次の呼び出しでは数字の1、2、3を返し、それ以降の呼び出しには"
+"\\ ``RuntimeException``\\ をスローします。"
+
+# a7cf47281207442cb05f2f0f080d655f
+#: ../../new_and_noteworthy.rst:289
+msgid ""
+"It's now possible to match any argument list (including the empty list) with "
+"``foo.bar(*_)``."
+msgstr ""
+"``foo.bar(*_)``\\ のように、任意の引数リスト（空のリストを含む）と、"
+"一致させることが可能になりました。"
+
+# 88d8b36d51bb42419a0e4933a1f1cb82
+#: ../../new_and_noteworthy.rst:291
+msgid ""
+"Method arguments can now be constrained with `Hamcrest <http://code.google."
+"com/p/hamcrest/>`_ matchers::"
+msgstr ""
+"また、\\ `Hamcrest <http://code.google.com/p/hamcrest/>`_\\ を使用して、"
+"引数制約を指定できるようになっています。"
+
+# 25cddf53c66f440d8e85110f8bba19a6
+#: ../../new_and_noteworthy.rst:300
+msgid "Extended JUnit Rules Support"
+msgstr "JUnitルールサポートの拡張"
+
+# eaf851af6c0e49bcb8614a04e941e9bb
+#: ../../new_and_noteworthy.rst:302
+msgid ""
+"In addition to rules implementing ``org.junit.rules.MethodRule`` (which has "
+"been deprecated in JUnit 4.9), Spock now also supports rules implementing "
+"the new ``org.junit.rules.TestRule`` interface. Also supported is the new "
+"``@ClassRule`` annotation. Rule declarations are now verified and can leave "
+"off the initialization part. I that case Spock will automatically initialize "
+"the rule by calling the default constructor. The ``@TestName`` rule, and "
+"rules in general, now honor the ``@Unroll`` annotation and any defined "
+"naming pattern."
+msgstr ""
+"``org.junit.rules.MethodRule``\\ （これはJUnit 4.9でdeprecatedになりました）"
+"を実装したルールに加え、\\ ``org.junit.rules.TestRule``\\ インタフェースを"
+"実装したルールのサポートを追加しました。"
+"また、JUnitの新たな\\ ``@ClassRule``\\ アノテーションのサポートも追加しています。"
+"さらにルールの定義を自動的に認識し、明示的に初期化しなくても動作するようになっています。"
+"これはデフォルトコンストラクタを使用し、Spockが自動的にルールを初期化します。"
+"\\ ``@Unroll``\\ アノテーションを使用したネーミングパターンは、\\ ``@TestName``\\ "
+"ルールや、その他一般的なルールにも適用されるようになりました。"
+
+# d36fd206582a46cb9d1afde70580dfe2
+#: ../../new_and_noteworthy.rst:305
+msgid ""
+"See `Issue 240 <http://issues.spockframework.org/detail?id=240>`_ for a "
+"known limitation with Spock's TestRule support."
+msgstr ""
+"SpockのTestRuleサポートに関する `課題 240 <http://issues.spockframework.org/detail?id=240>`_ "
+"の制約を確認してください。"
+
+# 384e3eb8476a434a87e7ecaa379ef307
+#: ../../new_and_noteworthy.rst:308
+msgid "Condition Rendering Improvements"
+msgstr "コンディションの表示の改善"
+
+# fe4a14942f784c36a3c9f7ef5e7271ee
+#: ../../new_and_noteworthy.rst:310
+msgid ""
+"When two objects are compared with the ``==`` operator, they are unequal, "
+"but their string representations are the same, Spock will now print the "
+"objects' types::"
+msgstr ""
+"2つのオブジェクトを\\ ``==``\\ 演算で比較すると、"
+"これらは等しないにもかかわらず、"
+"文字列表現はまったく同じものになってしまいます。"
+"このような場合に、オブジェクトの型を出力するようにしました。"
+
+# f0dba2a6dd4b4299b7e531d9120291ab
+#: ../../new_and_noteworthy.rst:318
+msgid "JUnit Fixture Annotations"
+msgstr "JUnitのフィクスチャアノテーション"
+
+# 153cc7ac3609411187c2b9a9b1252c82
+#: ../../new_and_noteworthy.rst:320
+msgid ""
+"Fixture methods can now be declared with JUnit's ``@Before``, ``@After``, "
+"``@BeforeClass``, and ``@AfterClass`` annotations, as an addition or "
+"alternative to Spock's own fixture methods. This was particularly needed for "
+"Grails 2.0 support."
+msgstr ""
+"従来のSpcokのフィクスチャメソッドに加え（または代わりに）、"
+"JUnitの\\ ``@Before``\\ 、\\ ``@After``\\ 、\\ ``@BeforeClass``\\ "
+"そして\\ ``@AfterClass``\\ を使用してフィクスチャメソッドが定義できるようになりました。"
+
+# 67ae330a6c2d4975a0f314ebbe4d599e
+#: ../../new_and_noteworthy.rst:323
+msgid "Tapestry 5.3 Support"
+msgstr "Tapestry 5.3のサポート"
+
+# 9b02405bf98c4f839d68091511c9cdd2
+#: ../../new_and_noteworthy.rst:325
+msgid ""
+"Thanks to a contribution from `Howard Lewis Ship <http://howardlewisship.com/"
+">`_, the Tapestry module is now compatible with Tapestry 5.3. Older 5.x "
+"versions are still supported."
+msgstr ""
+"`Howard Lewis Ship <http://howardlewisship.com/>`_\\ からのコントリビュートにより、"
+"TapestryモジュールがTapestry 5.3 互換となりました。"
+"従来の5.x以前のバージョンも、まだサポートされています。 "
+
+# 88b28c7f9b664786970f28b24c35c3a5
+#: ../../new_and_noteworthy.rst:328
+msgid "IBM JDK Support"
+msgstr "IBM JDKのサポート"
+
+# 813869de3a7b436aa2bbf237003b533c
+#: ../../new_and_noteworthy.rst:330
+msgid ""
+"Spock now runs fine on IBM JDKs, working around a bug in the IBM JDK's "
+"verifier."
+msgstr ""
+"IBMのJDKで検証を行いバグを回避をすることで、IBMのJDKで問題なく"
+"動作するようになりました。"
+
+# 9311250be7d94aa1985f7b4194ef87f6
+#: ../../new_and_noteworthy.rst:333
+msgid "Improved JUnit Compatibility"
+msgstr "JUnit互換の改善"
+
+# 5946700968b24c3baf267938a0e3b8e4
+#: ../../new_and_noteworthy.rst:335
+msgid ""
+"``org.junit.internal.AssumptionViolatedException`` is now recognized and "
+"handled as known from JUnit. ``@Unrolled`` methods no longer cause \"yellow"
+"\" nodes in IDEs."
+msgstr ""
+"``org.junit.internal.AssumptionViolatedException``\\ のハンドリングを追加しました。"
+"これにより、JUnitのAssume関連のAPIが問題なく動作するようになります。"
+"また、\\ ``@Unroll``\\ を付与したメソッドが、IDE上で警告とならないようになりました。"
+
+# 3945bade80e743bd8384d343fd3a8076
+#: ../../new_and_noteworthy.rst:340
+msgid "Improved ``@Unroll``"
+msgstr "``@Unroll``\\ の改善"
+
+# 3874abfab7664f41a4d2aee053e15947
+#: ../../new_and_noteworthy.rst:342
+msgid ""
+"The ``@Unroll`` naming pattern can now be provided in the method name, "
+"instead of as an argument to the annotation::"
+msgstr ""
+"``@Unroll``\\ のネーミングパターンがアノテーションの引数だけでなく、"
+"メソッド名で指定できるようになりました。"
+
+# dce9b2a2ded84f7bb667f09016c52059
+#: ../../new_and_noteworthy.rst:354
+msgid ""
+"The naming pattern now supports property access and zero-arg method calls::"
+msgstr ""
+"また、ネーミングパターンでプロパティアクセス、引数なしのメソッド呼び出しが"
+"使用できるようになっています。"
+
+# 96d2394fd3f645299d05be69f27e0988
+#: ../../new_and_noteworthy.rst:359
+msgid ""
+"The ``@Unroll`` annotation can now be applied to a spec class. In this case, "
+"all data-driven feature methods in the class will be unrolled."
+msgstr ""
+"さらに、\\ ``@Unroll``\\ アノテーションが、スペッククラスにも適用できるようにしました。"
+"この場合は、すべてのデータ駆動のフィーチャーメソッドが展開実行されます。"
+
+# 6c12999b05224c458b8024463c4da647
+#: ../../new_and_noteworthy.rst:362
+msgid "Improved ``@Timeout``"
+msgstr "``@Timeout``\\ の改善"
+
+# 4bbe4d5ec7c448a8bc4ec8f143060976
+#: ../../new_and_noteworthy.rst:364
+msgid ""
+"The ``@Timeout`` annotation can now be applied to a spec class. In this "
+"case, the timeout applies to all feature methods (individually) that aren't "
+"already annotated with ``@Timeout``. Timed methods are now executed on the "
+"regular test framework thread. This can be important for tests that rely on "
+"thread-local state (like Grails integration tests). Also the interruption "
+"behavior has been improved, to increase the chance that a timeout can be "
+"enforced."
+msgstr ""
+"``@Timeout``\\ アノテーションが、スペッククラスにも適用にも適用できるようになりました。"
+"この場合は、\\ ``@Timeout``\\ がすでに設定されているフィーチャメソッド除き、"
+"すべてのフィーチャメソッドにタイムアウトが適用されます。"
+"タイムアウトが付与されたメソッドは、通常のテストフレームワークのスレッドで実行されます。"
+"これは、スレッドローカルの状態に依存しているテストを行う場合に重要になることがあります"
+"（たとえばGrailsのインテグレーションテスト）。"
+"また、タイムアウトを強制することができるチャンスをより多くするために、"
+"スレッド中断の動作が改善されました。"
+
+# 14d04ee3a5464d5ba4fde95d5803f131
+#: ../../new_and_noteworthy.rst:367
+msgid ""
+"The failure exception that is thrown when a timeout occurs now contains the "
+"stacktrace of test execution, allowing you to see where the test was “stuck” "
+"or how far it got in the allocated time."
+msgstr ""
+"タイムアウトが発生した場合にスローされる例外の中に、テスト実行のスタックトレース"
+"が含まれるようになっています。これにより、どのスタックでタイムアウトになったのか、"
+"簡単に把握できるようになります。"
+
+# 6015754ef4fc4da3ab1a76ee57f53718
+#: ../../new_and_noteworthy.rst:370
+msgid "Improved Data Table Syntax"
+msgstr "データテーブルのシンタックス改善"
+
+# 0f2435b472c34403975e6c01297b54ef
+#: ../../new_and_noteworthy.rst:372
+msgid ""
+"Table cells can now be separated with double pipes. This can be used to "
+"visually set apart expected outputs from provided inputs::"
+msgstr ""
+"テーブルのセルを論理和の記号（``||``）で、区切ることができるようになりました。"
+"これは、入力値と出力の期待値を、視覚的に区別するために使用できます。"
+
+# a44073cee56e4d0382e2d4683c0d6c08
+#: ../../new_and_noteworthy.rst:381
+msgid "Groovy 1.8/2.0 Support"
+msgstr "Groovy 1.8/2.0のサポート"
+
+# 52c660517c474d9398d48997f88aac31
+#: ../../new_and_noteworthy.rst:383
+msgid ""
+"Spock 0.6 ships in three variants for Groovy 1.7, 1.8, and 2.0. Make sure to "
+"pick the right version - for example, for Groovy 1.8 you need to use spock-"
+"core-0.6-groovy-1.8 (likewise for all other modules). The Groovy 2.0 variant "
+"is based on Groovy 2.0-beta-3-SNAPSHOT and only available from http://m2repo."
+"spockframework.org. The Groovy 1.7 and 1.8 variants are also available from "
+"Maven Central. The next version of Spock will no longer support Groovy 1.7."
+msgstr ""
+"Spock 0.6ではGroovy 1.7、1.8、そして2.0それぞれに対応した、3つのバージョン"
+"を提供しています。これらの中から正しいバージョンを使用するようにしてください。"
+"例えば、Groovy 1.8を使用している場合は、spock-core-0.6-groovy-1.8"
+"を使用する必要があります（他のモジュールも同様です）。"
+"Groovy 2.0のバージョンはGroovyの2.0-beta-3-SNAPSHOTをベースにしており、"
+"\\ http://m2repo.spockframework.org\\ からのみ利用可能です。"
+"Groovy 1.7と1.8のバージョンはMavenのセントラルリポジトリからも利用可能です。"
+"また次のバージョンからは、Groovy 1.7をサポートしない予定です。"
+
+# 9da6314f599b4cc0a28a3f6b29b7f9df
+#: ../../new_and_noteworthy.rst:386
+msgid "Grails 2.0 Support"
+msgstr "Grails 2.0のサポート"
+
+# 774a203e113c4fe8a75829ac81e1cff3
+#: ../../new_and_noteworthy.rst:388
+msgid ""
+"Spock's Grails plugin was split off into a separate project and now lives at "
+"http://github.spockframework.org/spock-grails. The plugin supports both "
+"Grails 1.3 and 2.0."
+msgstr ""
+"SpockのGrailsプラグインを別のプロジェクトにしました。"
+"\\ http://github.spockframework.org/spock-grails\\ で管理しています。"
+"このプラグインは、Grailsの1.3と2.0の両方をサポートしています。"
+
+# db8f867525a14b1db68279bd5a77edd9
+#: ../../new_and_noteworthy.rst:390
+msgid ""
+"The Spock Grails plugin supports all of the new Grails 2.0 test mixins, "
+"effectively deprecating the existing unit testing classes (e.g. UnitSpec). "
+"For integration testing, IntegrationSpec must still be used."
+msgstr ""
+"Spock Grails pluginはGrails 2.0の新たなテストミックスインをすべてサポートしています。"
+"これにより既存のユニットテスト関連のクラスが非推奨になります（例えばUnitSpec）。"
+"ただしインテグレーションテストのために、IntegrationSpecは引き続き使用する必要があります。"
+
+# 5f892f1b2c20452684645304c447ece3
+#: ../../new_and_noteworthy.rst:393
+msgid "IntelliJ IDEA Integration"
+msgstr "Intellij IDEA連携"
+
+# cee83823259d407fa17dcd079337c846
+#: ../../new_and_noteworthy.rst:395
+msgid ""
+"The folks from `JetBrains <http://www.jetbrains.com>`_ have added a few "
+"handy features around data tables. Data tables will now be layed out "
+"automatically when reformatting code. Data variables are no longer shown as "
+"\"unknown\" and have their types inferred from the values in the table (!)."
+msgstr ""
+"`JetBrains <http://www.jetbrains.com>`_ の開発メンバーにより、"
+"データテーブルの周りのいくつか便利な機能が追加されました。"
+"まず、コードを再フォーマットすると、データテーブルが自動的にレイアウトされます。"
+"データ変数はこれまでのように\"unknown\"とは表示されません。さらに"
+"、これらの型はテーブルの値から型が推論されます（なんと！）。"
+
+# 61b02f348e434d55a1fcaaf153ba1041
+#: ../../new_and_noteworthy.rst:398
+msgid "GitHub Repository"
+msgstr "Githubリポジトリ"
+
+# d93d5be070c54d3bb889da7c17ae2128
+#: ../../new_and_noteworthy.rst:400
+msgid ""
+"All source code has moved to http://github.spockframework.org/. The `Grails "
+"Spock plugin <http://github.spockframework.org/spock-grails>`_, `Spock "
+"Example <http://github.spockframework.org/spock-example>`_ project, and "
+"`Spock Web Console <http://github.spockframework.org/spockwebconsole>`_ now "
+"have their own GitHub projects. Also available are slides and code for "
+"various Spock presentations (like `this one <http://github.spockframework."
+"org/smarter-testing-with-spock>`_)."
+msgstr ""
+"すべてのソースコードを\\ http://github.spockframework.org/\\ へ移動しました。"
+"ここには\\ `Grails Spock plugin <http://github.spockframework.org/spock-grails>`_\\ 、"
+"\\ `Spock Example <http://github.spockframework.org/spock-example>`_\\ プロジェクト、そして"
+"\\ `Spock Web Console <http://github.spockframework.org/spockwebconsole>`_\\ が"
+"Githubのプロジェクトとして置いてあります。"
+"また、各種プレゼンテーション用の、スライドやサンプルコードも参照可能になっています"
+"（例えば\\ `これ <http://github.spockframework.org/smarter-testing-with-spock>`_\\ ）。"
+
+# d505354cdd394c868c2e2b8afd5fa3cc
+#: ../../new_and_noteworthy.rst:403
+msgid "Gradle Build"
+msgstr "Gradleビルド"
+
+# 2f4e35f1ab154fe28324bef1deec866a
+#: ../../new_and_noteworthy.rst:405
+msgid ""
+"Spock is now exclusively built with Gradle. Building Spock yourself is as "
+"easy as cloning the `GitHub repo <http://github.spockframework.org/spock>`_ "
+"and executing ``gradlew build``. No build tool installation is required; the "
+"only prerequisite for building Spock is a JDK installation (1.5 or higher)."
+msgstr ""
+"SpockをGradleで構築するようにしました。Spockを自分自身でビルドする場合は、"
+"\\ `GitHub repo <http://github.spockframework.org/spock>`_\\ をクローンし、"
+"\\ ``gradlew build``\\ を実行することで簡単にビルドできます。"
+"事前にビルドツールをインストールしておく必要はありません。"
+"Spockをビルドするために必要な前準備は、JDKのインストール（1.5以上）のみです。"
+
+# 93bfbcc4c81b4410abfefec93801a037
+#: ../../new_and_noteworthy.rst:410
+msgid ""
+"See the `issue tracker <http://issues.spockframework.org/list?can=1&q=label"
+"%3AMilestone-0.6>`_ for a list of fixed issues."
+msgstr ""
+"修正された問題の一覧は、"
+"\\ `課題管理システム <http://issues.spockframework.org/list?can=1&q=label%3AMilestone-0.6>`_\\ "
+"を参照してください。"

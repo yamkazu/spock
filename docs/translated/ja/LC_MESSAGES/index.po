@@ -1,0 +1,48 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-01 00:31\n"
+"PO-Revision-Date: 2013-02-01 00:44+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <yam.kazuki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 9ce09d23494e49f1abc495e8c3416563
+#: ../../index.rst:2
+msgid "Spock Framework Reference Documentation"
+msgstr "Spock Framework リファレンスドキュメント"
+
+# fedad64c6cc3490493353098353cf7da
+#: ../../index.rst:4
+msgid "Authors: Peter Niederwieser"
+msgstr "著者: Peter Niederwieser"
+
+# 3d175360b0ba4cc08a0c90e7dd3101a5
+#: ../../index.rst:6
+msgid "Version: 1.0-SNAPSHOT"
+msgstr "Version: 1.0-SNAPSHOT"
+
+# 7ccc84ecdc9944af850e055e4a33fe02
+#: ../../index.rst:8
+msgid ""
+"This documentation effort is a work in progress. For the time being, we also "
+"recommend to check out the old documentation at http://wiki.spockframework."
+"org."
+msgstr ""
+"このドキュメントは現在作成中の状態です。当面の間は http://wiki.spockframework."
+"org にある過去のドキュメントも合わせて参照してください。"
+
+# cd1fc36dc1d84aea9fcfe2b3a6dc6684
+#: ../../index.rst:12
+msgid "Table of Contents"
+msgstr "目次"

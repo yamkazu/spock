@@ -1,0 +1,108 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 00:20\n"
+"PO-Revision-Date: 2013-02-14 00:27+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# bd11a8e8069f4d1e9f03bec8af4d4f51
+#: ../../getting_started.rst:2
+msgid "Getting Started"
+msgstr "Getting Started"
+
+# e6a8b2852ebc4c8c8eb37adf6dc7220a
+#: ../../getting_started.rst:4
+msgid "It's really easy to get started with Spock. This section shows you how."
+msgstr "Spockは非常に簡単に使い始めることができます。"
+"このセクションでは、それ例をいくつかご紹介します。"
+
+# 5074da7d2cec46739a24134a86866ab1
+#: ../../getting_started.rst:7
+msgid "Spock Web Console"
+msgstr "Spock Web コンソール"
+
+# fa18eef590f44af5a1733561a2badc49
+#: ../../getting_started.rst:9
+msgid ""
+"`Spock Web Console`_ is a website that allows you to instantly view, edit, "
+"run, and even publish Spock specifications. It is the perfect place to toy "
+"around with Spock without making any commitments. So why not run `Hello, "
+"Spock!`_ right now?"
+msgstr ""
+"`Spock Web Console`_ はSpockのスペックを表示、編集、実行したり、さらに公開できる"
+"ウェブサイトです。これは、ちょっとしたSpockのスペックを色々と試してみるのに最適の場所です。"
+"今すぐ `Hello, Spock!`_ を実行してみましょう！"
+
+# 554bd5d86f0a42b6abbf1c234fb61e15
+#: ../../getting_started.rst:12
+msgid "Spock Example Project"
+msgstr "Spock Example プロジェクト"
+
+# 89b81a6530de404a8835eed92682eb0d
+#: ../../getting_started.rst:14
+msgid ""
+"To try Spock on your own computer, download and unzip the Example Project "
+"(`download link`_). It comes with fully working Ant, Gradle, and Maven "
+"builds that require no further setup. The Gradle build even bootstraps "
+"Gradle itself and gets you up and running in Eclipse or IDEA with a single "
+"command. See the README for detailed instructions."
+msgstr ""
+"自分のマシンでSpockを試してみるには、Example Project（\\ `download link`_\\ ）をダウンロードして、"
+"解凍してください。これはAnt、Gradle、またはAntでビルドできるようになっています。"
+"Gradleでのビルドは自身の起動に必要なファイルを自動で取得し、ワンコマンドでEclipse、またはIDEA"
+"でのビルド環境を構築することもできます。詳しくはREADMEを参照してください。"
+
+# 7129c1ab67f340d1afea52ba908b849a
+#: ../../getting_started.rst:17
+msgid "Next Steps"
+msgstr "次のステップ"
+
+# 9ddaaace17aa44eaa1831a1a5213d9f8
+#: ../../getting_started.rst:19
+msgid ""
+"The following sections provide further information on how to use Spock in a "
+"number of different environments:"
+msgstr ""
+"この後のセクションでは、様々な環境下でどのようにSpockを使用するのか説明していきます。"
+
+# ce8efb68e67347ef832f01c58314b57a
+#: ../../getting_started.rst:21
+msgid "Ant"
+msgstr "Ant"
+
+# 9b13f5534d9245fcb34071871be3d14d
+#: ../../getting_started.rst:22
+msgid "Gradle"
+msgstr "Gradle"
+
+# a1ab084ea4014c7199854f2dd96d5eb3
+#: ../../getting_started.rst:23
+msgid "Maven"
+msgstr "Maven"
+
+# 1b1a19633f1248d1bebc2a69f5dcff9e
+#: ../../getting_started.rst:24
+msgid "Groovy Console"
+msgstr "Groovy コンソール"
+
+# 38952842503248e180a76bc734c5ab84
+#: ../../getting_started.rst:25
+msgid "Eclipse"
+msgstr "Eclipse"
+
+# ba48a8542819452eb3b075bb5c7c514f
+#: ../../getting_started.rst:26
+msgid "IDEA"
+msgstr "IDEA"
