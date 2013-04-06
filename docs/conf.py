@@ -218,3 +218,6 @@ man_pages = [
 # -- Options added by us -------------------------------------------------------
 
 highlight_language = 'java'
+
+locale_dirs = ["translated"]
+language="ja"
