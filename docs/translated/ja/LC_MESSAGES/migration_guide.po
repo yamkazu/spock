@@ -1,0 +1,183 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 00:20\n"
+"PO-Revision-Date: 2013-02-14 00:28+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <yam.kazuki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# a8585b6dcd5748b39bd784118743a90d
+#: ../../migration_guide.rst:2
+msgid "Migration Guide"
+msgstr "移行ガイド"
+
+# 0f5f8e1531394e1b922805264bc8f3e7
+#: ../../migration_guide.rst:4
+msgid ""
+"This page explains incompatible changes between successive versions and "
+"provides suggestions on how to deal with them."
+msgstr ""
+"このページはバージョン間で行われた、互換性のない変更の内容と"
+"その対処方法について説明します。"
+
+# a3f7186888904e609ad40e48bf22b7bc
+#: ../../migration_guide.rst:7
+msgid "0.7"
+msgstr "0.7"
+
+# fc1118822bd745a8bc8dde062732ff0e
+#: ../../migration_guide.rst:9
+msgid ""
+"Client code must be recompiled in order to work with Spock 0.7. This "
+"includes third-party Spock extensions and base classes."
+msgstr ""
+"クライアントコードはSpock 0.7で再コンパイルする必要があります。"
+"これにはサードパーティの機能拡張やベースクラスも含まれます。"
+
+# d6e2b56d5d004eb28de1f779026d00b2
+#: ../../migration_guide.rst:11
+msgid "No known source incompatible changes."
+msgstr "互換性のないソースコードの変更はありません。"
+
+# 97422c61b9c8456f8e2ee9949d4283d9
+#: ../../migration_guide.rst:14
+msgid "0.6"
+msgstr "0.6"
+
+# eacdd0c2fc644381815420d43767a5fc
+#: ../../migration_guide.rst:17
+msgid "Class initialization order"
+msgstr "クラスの初期化順序"
+
+# c772d484174e4f9b83608a6597827450
+#: ../../migration_guide.rst:19
+msgid ""
+"This only affects cases where one specification class inherits from another "
+"one."
+msgstr "これはSpecificationクラスを他のクラスから継承している場合に影響があります。"
+
+# 8dc8e00312a144c393f1a229be8f4af1
+#: ../../migration_guide.rst:21
+msgid "Given these specifications::"
+msgstr "以下のスペックを例に説明します。"
+
+# 9f61f9908bf245928480ce1575ca06ff
+#: ../../migration_guide.rst:37
+msgid ""
+"In 0.5, above assignments happened in the order ``base1``, ``base2``, "
+"``derived1``, ``derived2``. In other words, field initializers were executed "
+"right before the setup method in the same class. In 0.6, assignments happen "
+"in the order ``base1``, ``derived1``, ``base2``, ``derived2``. This is a "
+"more conventional order that solves a few problems that users faced with the "
+"previous behavior, and also allows us to support JUnit's new ``TestRule``. "
+"As a result of this change, the following will no longer work::"
+msgstr ""
+"0.5以前では、\\ ``base1``\\ 、\\ ``base2``\\ 、\\ ``derived1``\\ 、\\ ``derived2``\\ "
+"の順にフィールドへの割り当てが行われていました。"
+"別の言い方をすると、フィールドの初期化は、同じクラスのsetupメソッドの直前に行われていました。"
+"これが0.6では、\\ ``base1``\\ 、\\ ``derived1``\\ 、\\ ``base2``\\ 、\\ ``derived2``\\ "
+"の順に割り当てが行われます。"
+"これは、より一般的な順序であり、以前の動作で直面していたいくつかの問題を解決します。"
+"また、この変更により新たなJUnitのTestRuleのサポートを追加することができました。"
+"以下のコードは、0.6では正しく動作しません。"
+
+# 7bafd67b806c490ea42d7942d3d905c0
+#: ../../migration_guide.rst:49
+msgid ""
+"To overcome this problem, you can either use a field initializer for "
+"``base``, or move the assignment of ``derived`` into a setup method."
+msgstr ""
+"この問題を回避するには、\\ ``base``\\ をフィールドで初期化するか、"
+"\\ ``derived``\\ への割り当てをsetupメソッドに移動するかのどちらかになります。"
+
+# 3cfab96b146440fb8409b3b798fdb561
+#: ../../migration_guide.rst:52
+msgid "``@Unroll`` naming pattern syntax"
+msgstr "\\ ``@Unroll``\\ のネーミングパターンのシンタックス"
+
+# a5e0d35ee00f4f158f4ab10bfa28154b
+#: ../../migration_guide.rst:54
+msgid "This is not a change from 0.5, but a change compared to 0.6-SNAPSHOT."
+msgstr "これは0.5から変更はありませんが、0.6-SNAPSHOTから変更があります。"
+
+# 0860031e23844df99a5aebd300d5ae56
+#: ../../migration_guide.rst:56
+msgid "This only affects the Groovy 1.8 and 2.0 variants."
+msgstr "これは、Groovyの1.8と2.0のバージョンで影響を与えます。"
+
+# 38743d55ee28457aa87514453be228b1
+#: ../../migration_guide.rst:58
+msgid "In 0.5, the naming pattern was string based::"
+msgstr "0.5ではネーミングパターンはStringベースでした。"
+
+# acc17d54fbe34e13bad293756dd3eaf6
+#: ../../migration_guide.rst:70
+msgid ""
+"In 0.6-SNAPSHOT, this was changed to a closure returning a ``GString``::"
+msgstr "0.6-SNAPSHOTでは、これが\\ ``GString``\\ を返すクロージャに変更されました。"
+
+# 4b7c4e0f562a47e5bd6df7a97af10441
+#: ../../migration_guide.rst:75
+msgid ""
+"For various reasons, the new syntax didn't work out as we had hoped, and "
+"eventually we decided to go back to the string based syntax. See :ref:"
+"`improved-unroll-0.6` for recent improvements to that syntax."
+msgstr ""
+"様々な理由により、新しいシンタックスは期待したとおりに動作しませんでした。"
+"そのため、最終的には元のStringベースの指定に戻しています。"
+"また、このStringベースのシンタックス改善について、\\ :ref:`improved-unroll-0.6`\\ を参照してください。"
+
+# 40900116083b4e6f91fb90402f664c4e
+#: ../../migration_guide.rst:78
+msgid "Hamcrest matcher syntax"
+msgstr "Hamcrestマッチャーのシンタックス"
+
+# 703d3405f5e84f4c9e444ffd3b03f7b9
+#: ../../migration_guide.rst:80
+msgid ""
+"This only affects users moving from the Groovy 1.7 to the 1.8 or 2.0 variant."
+msgstr ""
+"これは、Groovyの1.7から、1.8または2.0のバージョンに移行するユーザーに影響します。"
+
+# 3b7c2010809945a7871003d3ab27aa70
+#: ../../migration_guide.rst:82
+msgid ""
+"Spock offers a very neat syntax for using `Hamcrest <http://code.google.com/"
+"p/hamcrest/>`_ matchers::"
+msgstr ""
+"Spockは\\ `Hamcrest <http://code.google.com/p/hamcrest/>`_\\ のマッチャーを使用するために、"
+"非常に綺麗なシンタックスを提供しています。"
+
+# fa934894a6484f1ba05bf717e0675144
+#: ../../migration_guide.rst:91
+msgid ""
+"Due to changes made between Groovy 1.7 and 1.8, this syntax no longer works "
+"in as many cases as it did before. For example, the following will no longer "
+"work::"
+msgstr ""
+"Groovy 1.7と1.8の間で行われた変更により、このシンタックスは多くの場合に"
+"正しく動作しなくなりました。例えば、次のコードは正しく動作しません。"
+
+# f4162d350f124961889c1c1ac2945dfd
+#: ../../migration_guide.rst:97
+msgid "To avoid such problems, use ``HamcrestSupport.that``::"
+msgstr "この問題を回避するには、\\ ``HamcrestSupport.that``\\ を使用します。"
+
+# a89a351a0cd046399d077ea4c372a9e0
+#: ../../migration_guide.rst:106
+msgid ""
+"A future version of Spock will likely remove the former syntax and "
+"strengthen the latter one."
+msgstr "Spockの将来のバージョンでは、おそらく前者のシンタックスを削除し、"
+"後者のシンタックスのサポートを強化していく予定です。"

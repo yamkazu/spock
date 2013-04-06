@@ -1,0 +1,204 @@
+# Japanese translations for Spock Framework package.
+# Copyright (C) 2012, Peter Niederwieser
+# This file is distributed under the same license as the Spock Framework package.
+# Kazuki YAMAMOTO <>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Spock Framework 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 00:20\n"
+"PO-Revision-Date: 2013-02-14 00:27+0900\n"
+"Last-Translator: Kazuki YAMAMOTO <>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 94fdf523b85f4384a6eb6f8ec2c4495f
+#: ../../extensions.rst:4
+msgid "Extensions"
+msgstr "拡張機能"
+
+# 72f219a27e704160b580452674ac2116
+#: ../../extensions.rst:6
+msgid ""
+"Spock comes with a powerful extension mechanism, which allows to hook into a "
+"spec's lifecycle to enrich or alter its behavior. In this chapter, we will "
+"first learn about Spock's built-in extensions, and then dive into writing "
+"custom extensions."
+msgstr ""
+"Spockでは、スペックのライフサイクルの振る舞いを、拡張したり、変更したり"
+"することができる、強力な拡張機構を持っています。"
+"この章では、はじめにSpockにビルトインされている機能拡張について説明します。"
+"その後で、カスタムの機能拡張を記述する方法を説明します。"
+
+# 136022f7d88a4155ba312feb1280a716
+#: ../../extensions.rst:11
+msgid "Built-In Extensions"
+msgstr "ビルトイン機能拡張"
+
+# 2b5a0e8696dc424e8f49e6f3d58303a0
+#: ../../extensions.rst:13
+msgid ""
+"Most of Spock's built-in extensions are *annotation-driven*. In other words, "
+"they are triggered by annotating a spec class or method with a certain "
+"annotation. You can tell such an annotation by its ``@ExtensionAnnotation`` "
+"meta-annotation."
+msgstr ""
+"Spockでビルトインされている拡張機能のほとんどは、アノテーションを通して使用します。"
+"これはスペッククラスやメソッドに対して、特定のアノテーションを付与することで動作します。"
+"これらは\\ ``@ExtensionAnnotation``\\ のメタアノテーションを付与することで、独自に"
+"指定することも可能です。"
+
+# c2176a84396f4efeb2684e3d4774b433
+#: ../../extensions.rst:18
+msgid "Ignore"
+msgstr "Ignore"
+
+# 051112cc08064ea3bc445827050e9e2a
+#: ../../extensions.rst:20
+msgid ""
+"To temporarily prevent a feature method from getting executed, annotate it "
+"with ``spock.lang.Ignore``::"
+msgstr ""
+"\\ ``spock.lang.Ignore``\\ を付与することで、一時的にフィーチャメソッド"
+"実行しないようにできます。"
+
+# 8ec411b49ee445f88f83fc4b8935f4d3
+#: ../../extensions.rst:25
+msgid "For documentation purposes, a reason can be provided::"
+msgstr "実行しない理由を記述することもできます。"
+
+# bb09fc3c4be14bc8a6515065f5e6d6e0
+#: ../../extensions.rst:30
+msgid "To ignore a whole specification, annotate its class::"
+msgstr "全てのフィーチャメソッドをignoreするには、クラスに対してアノテーションを付与します。"
+
+# cbb2eab02b554c74a5390c7db53cda3e
+#: ../../extensions.rst:35
+msgid ""
+"In most execution environments, ignored feature methods and specs will be "
+"reported as \"skipped\"."
+msgstr ""
+"ほとんどの実行環境では、ignoreされたフィーチャメソッド、スペックは"
+"\"skipped\"としてレポートされます。"
+
+# 5365d87e670249a0a7d7fabc5cd592d2
+#: ../../extensions.rst:38
+msgid "IgnoreRest"
+msgstr "IgnoreRest"
+
+# 9b0a19c6f42f48d2a2bd3497045f2ef9
+#: ../../extensions.rst:40
+msgid ""
+"To ignore all but a (typically) small subset of methods, annotate the latter "
+"with ``spock.lang.IgnoreRest``::"
+msgstr ""
+"特定のメソッドのサブセット以外すべてをignoreするには、"
+"\\ ``spock.lang.IgnoreRest``\\ アノテーションを使用します。"
+
+# 4a95c34568f44964a0b0cc21c8e30f29
+#: ../../extensions.rst:49
+msgid ""
+"``@IgnoreRest`` is especially handy in execution environments that don't "
+"provide an (easy) way to run a subset of methods."
+msgstr ""
+"``@IgnoreRest``\\ は、特定のメソッドのサブセットを、（簡単に）実行する方法がない実行環境で、"
+"特に便利な機能です。"
+
+# fefa5d299cb54e8b83b6609ea7ee7e87
+#: ../../extensions.rst:52
+msgid "IgnoreIf"
+msgstr "IgnoreIf"
+
+# 873af580e82a45f29ea8420d7987db00
+#: ../../extensions.rst:54
+msgid ""
+"To ignore a feature method under certain conditions, annotate it with "
+"``spock.lang.IgnoreIf``, followed by a predicate::"
+msgstr ""
+"特定の条件下でのみフィーチャメソッドをignoreするには、"
+"\\ ``spock.lang.IgnoreIf``\\ を付与し、プレディケート"
+"を指定します。"
+
+# fb3babc30f7943d89684becf4e42fe48
+#: ../../extensions.rst:60
+msgid ""
+"To make predicates easier to read and write, the following properties are "
+"available inside the closure:"
+msgstr ""
+"プリディケートが読み書きしやすいように、クロージャ内で"
+"以下のプロパティが使用可能です。"
+
+# d779be4dbd4b40a49236df8b2646b82d
+#: ../../extensions.rst:62
+msgid "``sys`` A map of all system properties"
+msgstr "``sys`` すべてのシステムプロパティのマップ"
+
+# 65066b7f2c744a56a28a92e6b52b7c43
+#: ../../extensions.rst:63
+msgid "``env`` A map of all environment variables"
+msgstr "``env`` すべての環境変数のマップ"
+
+# 0dec5d53916c4e55981a5554c9e57ba6
+#: ../../extensions.rst:64
+msgid ""
+"``os`` Information about the operating system (see ``spock.util.environment."
+"OperatingSystem``)"
+msgstr ""
+"``os`` オペレーティングシステムに関する情報 (\\ ``spock.util.environment.OperatingSystem``\\ 参照)"
+
+# eb5fa22850794a0a824f3297c8f00b54
+#: ../../extensions.rst:65
+msgid "``jvm`` Information about the JVM (see ``spock.util.environment.Jvm``)"
+msgstr "``jvm`` JVMに関する情報（\\ ``spock.util.environment.Jvm``\\ 参照）"
+
+# fd495573888a458fa844a16f322cdb2e
+#: ../../extensions.rst:67
+msgid "Using the ``os`` property, the previous example can be rewritten as::"
+msgstr "上記の例は、\\ ``os``\\ プロパティを使用することで以下のように記述できます。"
+
+# 709f85eff79046b28745077d2685ecc6
+#: ../../extensions.rst:73
+msgid "Requires"
+msgstr "Requires"
+
+# 45fa2a604acc43c2acdab520415be0fd
+#: ../../extensions.rst:75
+msgid ""
+"To execute a feature method under certain conditions, annotate it with "
+"``spock.lang.Requires``, followed by a predicate::"
+msgstr ""
+"特定の条件下でのみフィーチャメソッドを実行するには、"
+"\\ ``spock.lang.Requires``\\ を付与し、プレディケート"
+"を指定します。"
+
+# d5fbb5115c6e4ae1999c43dde54815f5
+#: ../../extensions.rst:81
+msgid ""
+"``Requires`` works exactly like ``IgnoreIf``, except that the predicate is "
+"inverted. In general, it is preferable to state the conditions under which a "
+"method gets executed, rather than the conditions under which it gets ignored."
+msgstr ""
+"\\ ``Requires``\\ はプレディケートの意味が逆になっている以外は"
+"\\ ``IgnoreIf``\\ と同じように動作します。"
+"一般的には、ignoreする条件を記述するよりも、メソッドを実行する条件を"
+"明示する方が、良い作法とされています。"
+
+# 13fff5131d884bc7983751cdf2e64b3a
+#: ../../extensions.rst:84
+msgid "TODO More to follow."
+msgstr ""
+
+# 077e6ee84d1841cd82f4a2c9f9bcaaca
+#: ../../extensions.rst:87
+msgid "Writing Custom Extensions"
+msgstr "カスタム機能拡張の作成"
+
+# 121c68b866b94027b36d3ba103165407
+#: ../../extensions.rst:89
+msgid "TODO"
+msgstr ""
