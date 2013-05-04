@@ -138,7 +138,7 @@ msgid ""
 "better IDE support::"
 msgstr ""
 "または、Javaに近いシンタックスもサポートしています。"
-"これは、IDEのサポートをより受けやすくするかもしれません。"
+"これは、IDEのサポートがより受けやすくなるかもしれません。"
 
 # 6b8b1190c5b442929500e1f6d669d45c
 #: ../../interaction_based_testing.rst:65
@@ -248,8 +248,7 @@ msgid ""
 "Mocking is the act of describing (mandatory) interactions between the object "
 "under specification and its collaborators. Here is an example::"
 msgstr ""
-"モッキングとは、仕様対象のオブジェクトとそのコラボレータ間（で必須）の、"
-"インタラクションを定義するということです。"
+"モッキングとは、仕様対象のオブジェクトとそのコラボレータ間の、（必須の）インタラクション（相互作用）を定義する活動のことです。"
 "次の例を見てください。"
 
 # b8109a44526043bfb0a9c3b825217ca3
@@ -258,8 +257,9 @@ msgid ""
 "Read out aloud: \"When the publisher sends a 'hello' message, then both "
 "subscribers should receive that message exactly once.\""
 msgstr ""
-"文章としてコードを読んでみると「publisher が 'hello' のメッセージを send したとき、"
-" それぞれの subscriber は 1回 message を receive すべき」になります。"
+"音読すると"
+"「publisher が 'hello' のメッセージを send したとき、両方の subscriber は 1回 message を receive すべき」"
+"になります。（訳注: コードが英語の文章のように読めるということを言っている）"
 
 # 91ae211516c54c659901daca01dd8b90
 #: ../../interaction_based_testing.rst:127
@@ -271,12 +271,9 @@ msgid ""
 "thrown. This verification happens automatically and does not require any "
 "additional code."
 msgstr ""
-"フィーチャメソッドが実行されると、\\ ``then:``\\ ブロックで宣言した"
-"インタラクションにマッチする、\\ ``when:``\\ ブロックでの"
-"モックオブジェクトへの呼び出しが全て記録されます。"
-"もし期待したインタラクションが満たされない場合は\\ ``InteractionNotSatisfiedError``\\ "
-"（のサブクラス）がスローされます。"
-"この検証は自動的に行われ、開発者自身で検証のコードを記述する必要はありません。"
+"このフィーチャメソッドを実行すると、\\ ``when:``\\ ブロック内で発生するモックオブジェクトへのすべての呼び出しが、\\ ``then:``\\ ブロックで定義したインタラクションと照合されます。"
+"もし、インタラクションが1つでも満たされない場合は\\ ``InteractionNotSatisfiedError``\\ （のサブクラス）が投げられます。"
+"この検証は自動的に行われます。開発者自身で検証コードを記述する必要はありません。"
 
 # be33d88d5f3141f497456c847fc5da94
 #: ../../interaction_based_testing.rst:133
