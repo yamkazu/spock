@@ -73,7 +73,7 @@ msgstr ""
 "subscriberのモック実装を自前で作成することもできます。"
 "しかし、メソッドの数が多かったり、相互作用が複雑なメソッドが増えてくると、このコードを書いたりメンテナンスするのが煩わしくなります。"
 "そこで、モックフレームワークの出番です。"
-"このフレームワークは、仕様対象のオブジェクトとコラボレータの間に期待する相互作用を定義する方法を提供します。"
+"このフレームワークは、仕様対象のオブジェクトとコラボレータの間に期待する相互作用を宣言する方法を提供します。"
 "さらに、この期待する相互作用を検証する、コラボレータのモック実装を生成できます。"
 
 # 24e8bec5a9bd4c10bdeff0a92bc789ce
@@ -190,11 +190,11 @@ msgstr ""
 "（質問: Lenient vs Strictなモックフレームワーク）"
 "Mockitoのように、モックフレームワークはデフォルトでlenient（緩い）であるべきだと考えています。"
 "これはモックオブジェクトに対して予期しないメソッドの呼び出し（別の言い方をすると、テストと関係のない相互作用）を許容し、その呼び出しに対しデフォルトのレスポンスを返すことを意味します。"
-"逆にEasyMock、JMockといったモックフレームはデフォルトでstrict（厳格）です。"
+"逆にEasyMock、JMockといったモックフレームワークはデフォルトでstrict（厳格）です。"
 "このstrictなモックフレームワークは、予期しないメソッドの呼び出しに例外を投げます。"
 "このような厳密性の強制はover-specification（詳細すぎる仕様）を引き起こします。"
 "これは、内部のコード変更で、すぐにテストが失敗する「壊れやすいテスト」という結果をもたらします。"
-"Spockのモックフレームワークは、関係のある相互作用だけを簡単に定義できるようにすることで、over-specificationのトラップを回避します。"
+"Spockのモックフレームワークは、関係のある相互作用だけを簡単に宣言できるようにすることで、over-specificationのトラップを回避します。"
 
 # cf77246bfb6441debd3f255bf615b39f
 #: ../../interaction_based_testing.rst:86
@@ -235,12 +235,12 @@ msgid ""
 "We are now ready to describe the expected interactions between the two "
 "parties."
 msgstr ""
-"これで2つのオブジェクト間に期待する相互作用を定義する準備が整いました。"
+"これで2つのオブジェクト間に期待する相互作用を宣言する準備が整いました。"
 
 # 6e9b615a816a46e6a3aff1e3c4129e74
 #: ../../interaction_based_testing.rst:111
 msgid "Mocking"
-msgstr "モッキング（Mocking）"
+msgstr "モッキング（訳注: Mocking）"
 
 # be2452128cb34aca894ac477050b5496
 #: ../../interaction_based_testing.rst:113
@@ -248,7 +248,7 @@ msgid ""
 "Mocking is the act of describing (mandatory) interactions between the object "
 "under specification and its collaborators. Here is an example::"
 msgstr ""
-"モッキングとは、仕様対象のオブジェクトとそのコラボレータ間の、（必須の）インタラクション（相互作用）を定義する活動のことです。"
+"モッキングとは、仕様対象のオブジェクトとそのコラボレータ間の、（必須の）インタラクション（訳注: ここまで相互作用と表記してきましたが、Spockではインタラクションを用語として使用しているため、以降インタラクションと表記します）を宣言する活動です。"
 "次の例を見てください。"
 
 # b8109a44526043bfb0a9c3b825217ca3
@@ -259,7 +259,7 @@ msgid ""
 msgstr ""
 "音読すると"
 "「publisher が 'hello' のメッセージを send したとき、両方の subscriber は 1回 message を receive すべき」"
-"になります。（訳注: コードが英語の文章のように読めるということを言っている）"
+"になります。（訳注: コードが英語の文章のように読めると言っている）"
 
 # 91ae211516c54c659901daca01dd8b90
 #: ../../interaction_based_testing.rst:127
@@ -271,7 +271,7 @@ msgid ""
 "thrown. This verification happens automatically and does not require any "
 "additional code."
 msgstr ""
-"このフィーチャメソッドを実行すると、\\ ``when:``\\ ブロック内で発生するモックオブジェクトへのすべての呼び出しが、\\ ``then:``\\ ブロックで定義したインタラクションと照合されます。"
+"このフィーチャメソッドを実行すると、\\ ``when:``\\ ブロック内で発生するモックオブジェクトへのすべての呼び出しが、\\ ``then:``\\ ブロックで宣言したインタラクションと照合されます。"
 "もし、インタラクションが1つでも満たされない場合は\\ ``InteractionNotSatisfiedError``\\ （のサブクラス）が投げられます。"
 "この検証は自動的に行われます。開発者自身で検証コードを記述する必要はありません。"
 
@@ -291,12 +291,10 @@ msgid ""
 "one, or multiple invocations."
 msgstr ""
 "（質問: インタラクションは通常のメソッド呼び出しか？）"
-"いいえ。インタラクションは通常のメソッド呼び出しのように見えますが、"
-"これは呼び出しを期待するメソッドの多重度が、わかりやすいように表現しているにすぎません。"
-"またインタラクションを、モックオブジェクトの全ての呼び出しに対する、正規表現と"
-"考えるのとわかりやすいかもしれません。"
-"指定の方法によってインタラクションが0回、1回、または複数回マッチする"
-"といった表現が可能です。"
+"もちろん、そんなことはありません。"
+"インタラクションは通常のメソッド呼び出しのように見えます。しかし、インタラクションは期待するメソッド呼び出しを、わかりやすく表現する方法にすぎません。"
+"このインタラクションは、モックオブジェクトに発生する、すべての呼び出しに対する正規表現と考えるよいでしょう。"
+"状況によって、インタラクションが0回マッチするかもしれませんし、1回、または複数回マッチするかもしれません。"
 
 # d496b838aad345629eea4eb09cf0a80c
 #: ../../interaction_based_testing.rst:142
@@ -305,11 +303,9 @@ msgid ""
 "*interactions*, each of which has four distinct parts: a *cardinality*, a "
 "*target constraint*, a *method constraint*, and an *argument constraint*::"
 msgstr ""
-"``then:``\\ ブロックの詳細を見ていきます。"
-"上記では2つの\\ *インタラクション*\\ を定義していますが、それぞれ"
-"\\ *多重度（cardinality）*\\ 、\\ *対象制約（target constraint）*\\ 、"
-"\\ *メソッド制約（method constraint）*\\ 、そして\\ *引数制約（argument constraint）*\\ "
-"の4つの個別パートから成り立っています。"
+"それでは、``then:``\\ ブロックについて詳しく見ていきましょう。"
+"上記の例では2つの\\ *インタラクション*\\ を宣言しています。"
+"この2つのインタラクションは、\\ *多重度（訳注: cardinality）*\\ 、\\ *対象制約（訳注: target constraint）*\\ 、\\ *メソッド制約（訳注: method constraint）*\\ 、そして\\ *引数制約（訳注: argument constraint）*\\ の4つのパートから成り立っています。"
 
 # e81001af510f4785ab5bfaeb5f3f5358
 #: ../../interaction_based_testing.rst:153
@@ -322,8 +318,8 @@ msgid ""
 "The cardinality of an interaction describes how often a method call is "
 "expected. It can either be a fixed number or a range::"
 msgstr ""
-"多重度は期待するメソッドの呼び出し回数を表しています。"
-"これは固定の数値、または範囲で指定できます。"
+"多重度は、何回メソッド呼び出しを期待しているかを表します。"
+"この多重度の指定には固定の数値、または範囲が使用できます。"
 
 # f9b110fd388d4db0b4b7cbf2fc64ef28
 #: ../../interaction_based_testing.rst:166
@@ -336,7 +332,7 @@ msgid ""
 "The target constraint of an interaction describes which mock object is "
 "expected to receive the method call::"
 msgstr ""
-"対象制約は呼び出しを期待するモックオブジェクトを表しています。"
+"対象制約は、どのモックオブジェクトにメソッド呼び出しを期待しているかを表します。"
 
 # e2e656ab80a34aa89e52d0b0c617ccee
 #: ../../interaction_based_testing.rst:174
@@ -349,7 +345,7 @@ msgid ""
 "The method constraint of an interaction describes which method is expected "
 "to be called::"
 msgstr ""
-"メソッド制約は呼び出しを期待するメソッドを表しています。"
+"メソッド制約は、どのメソッドに呼び出しを期待しているかを表します。"
 
 # 2b94d1219446478c88bd63a30abe2a82
 #: ../../interaction_based_testing.rst:182
@@ -357,14 +353,14 @@ msgid ""
 "When expecting a call to a getter method, Groovy property syntax *can* be "
 "used instead of method syntax::"
 msgstr ""
-"呼び出しを期待するメソッドがゲッターの場合は、Groovyのプロパティ構文が使用できます。"
+"ゲッターメソッドの呼び出しを期待する場合は、通常のメソッドのシンタックスの代わりにGroovyのプロパティ構文が使用できます。"
 
 # e00d2250ebc347c2ae5216213044e292
 #: ../../interaction_based_testing.rst:186
 msgid ""
 "When expecting a call to a setter method, only method syntax can be used::"
 msgstr ""
-"セッターの場合は、通常のメソッドと同じように指定する必要があります。"
+"セッターメソッドの呼び出しを期待する場合は、メソッドのシンタックスのみが使用できます。"
 
 # 922b9cdcc93842ebb533f0e576994bab
 #: ../../interaction_based_testing.rst:191
@@ -377,14 +373,14 @@ msgid ""
 "The argument constraints of an interaction describe which method arguments "
 "are expected::"
 msgstr ""
-"引数制約は呼び出しを期待するメソッドの引数を表しています。"
+"引数制約は、どんなメソッド引数を期待しているかを表します。"
 
 # a185b9bd01604d5caa517f00c4e2b4ca
 #: ../../interaction_based_testing.rst:205
 msgid ""
 "Argument constraints work as expected for methods with multiple arguments::"
 msgstr ""
-"複数の引数を持つメソッドに対しても問題なく使用できます。"
+"引数制約は複数の引数を持つメソッドにも使用できます。"
 
 # 607bcfd285c0441ebef7bc92e267ae89
 #: ../../interaction_based_testing.rst:209
@@ -392,7 +388,7 @@ msgid ""
 "When dealing with vararg methods, vararg syntax can also be used in the "
 "corresponding interactions::"
 msgstr ""
-"また可変長引数のメソッドに対しても、同じようにインタラクションを定義できます。"
+"可変長引数のメソッドを扱う場合も、これまでのインタラクションと同じように可変長引数のシンタックスが使用できます。"
 
 # acc5f693a51b4b3ca00bf183a8707c08
 #: ../../interaction_based_testing.rst:221
@@ -401,20 +397,20 @@ msgid ""
 "in vararg style. Consequently, vararg syntax can also be used in "
 "interactions matching such methods."
 msgstr ""
-"Groovyではメソッドの最後のパラメータを、配列として宣言すると可変長引数として扱います。"
-"可変長引数のメソッドと同じように、このようなメソッドに対してもインタラクションのマッチングが行えます。"
+"Groovyでは最後のパラメータが配列であるメソッドに対して、可変長引数形式の呼び出しを許可しています。"
+"可変長引数のシンタックスは、このようなメソッドのインタラクションのマッチングにも使用できます。"
 
 # 14cd2169aba94449b8480464e4f10e0f
 #: ../../interaction_based_testing.rst:225
 msgid "Matching Any Method Call"
-msgstr "すべてのメソッド呼び出しに対するマッチング"
+msgstr "いくつかのメソッド呼び出しに対するマッチング"
 
 # 8e83a78da53f4e8aacbceedb37701063
 #: ../../interaction_based_testing.rst:227
 msgid ""
 "Sometimes it can be useful to match \"anything\", in some sense of the word::"
 msgstr ""
-"\"何にでも\"一致するという指定が便利な場合もあります。"
+"言葉の意味どおり「何にでも」一致というのが便利な場面があります。"
 
 # 1bcbbe46c8ec4e52bbab7cf46855b643
 #: ../../interaction_based_testing.rst:235
@@ -422,8 +418,8 @@ msgid ""
 "Although ``(_.._) * _._(*_) >> _`` is a valid interaction declaration, it is "
 "neither good style nor particularly useful."
 msgstr ""
-"\\ ``(_.._) * _._(*_) >> _``\\ は有効なインタラクションの定義ですが、"
-"これは良いスタイルでもなければ、便利な場面があるわけでもありません。"
+"\\ ``(_.._) * _._(*_) >> _``\\ は有効なインタラクションの宣言です。"
+"しかし、良いスタイルでもなければ、便利な場面があるわけでもありません。"
 
 # 59e83546c22047bc8f90c18f87fcfa20
 #: ../../interaction_based_testing.rst:239
@@ -437,9 +433,9 @@ msgid ""
 "*strict mocking*, a style of mocking where no interactions other than those "
 "explicitly declared are allowed::"
 msgstr ""
-"上記のすべてのメソッド呼び出しに対するマッチングはどのような時に役立つでしょうか？ "
+"上記の「いくつかのメソッド呼び出しに対するマッチング」はどのような場合に便利でしょうか？ "
 "よい例が\\ *strictモッキング*\\ です。"
-"このモックのスタイルは明示的に定義したインタラクション以外を許容しません。"
+"このモッキングのスタイルは、明示的に宣言した以外のインタラクションを許可しません。"
 
 # 90528da444804393a3710cc342f89b3c
 #: ../../interaction_based_testing.rst:252
@@ -448,10 +444,8 @@ msgid ""
 "method. Note the use of ``_ *`` (any number of calls), which allows any "
 "interaction with the auditing component."
 msgstr ""
-"このように\\ ``0 *``\\ を\\ ``then:``\\ ブロック、またはメソッドの最後のインタラクション"
-"として定義することで効果を発揮します。"
-"また\\ ``_ *``\\ （任意の呼び出し回数）は、auditingコンポーネントに対して"
-"任意の呼び出し回数を許容することを表しています。"
+"このように\\ ``0 *``\\ は\\ ``then:``\\ ブロックの最後、またはメソッドの最後のインタラクションとした場合にのみ効果を発揮します。"
+"また\\ ``_ *``\\ （任意の呼び出し回数）は、auditingコンポーネントに対して任意の呼び出し回数を許容しています。"
 
 # 2c90f36ada0643ffb41c8df0d7d21e5c
 #: ../../interaction_based_testing.rst:255
@@ -461,10 +455,9 @@ msgid ""
 "example, ``_ * auditing.record(_) >> \"ok\"`` can (and should!) be "
 "simplified to ``auditing.record(_) >> \"ok\"``."
 msgstr ""
-"``_ *``\\ はstrictモッキングを行う場合にのみ有効です。"
-"特に\\ :ref:`スタビング <Stubbing>`\\ を行う場合は必要になることはありません。"
-"例えば\\ ``_ * auditing.record(_) >> \"ok\"``\\ は単に\\ ``auditing.record(_) >> \"ok\"``\\ "
-"と定義すべきです。"
+"``_ *``\\ は、strictモッキングで使用する場合にのみ意味があります。"
+"特に\\ :ref:`スタビング <Stubbing>`\\ で必要になることは絶対にありません。"
+"例えば\\ ``_ * auditing.record(_) >> \"ok\"``\\ は、単に\\ ``auditing.record(_) >> \"ok\"``\\ とすべきです。"
 
 # d4d4f1d3c3374d30b7f64f75219c2dd3
 #: ../../interaction_based_testing.rst:262
@@ -481,12 +474,11 @@ msgid ""
 "a ``setup`` method. Interactions can also be declared in any \"helper\" "
 "instance method of the same specification class."
 msgstr ""
-"ここまで見てきた例ではインタラクションを、\\ ``then:``\\ ブロックに定義してきました。 "
-"これはより自然にスペックが読めるという効果がありますが、"
-"インタラクションを\\ ``when:``\\ ブロックの\\ *前*\\ で"
-"定義することもできます。これは\\ ``setup``\\ といったメソッドでも定義できることを"
-"意味しています。同じように他のヘルパークラスで"
-"インタラクションを定義し、スペッククラス内から呼び出すといったことも可能です。"
+"ここまではインタラクションを、\\ ``then:``\\ ブロックに宣言してきました。"
+"これはスペックがより自然に読めるという効果があります。"
+"しかし、インタラクションは\\ ``when:``\\ ブロックの\\ *前*\\ であればどこでも宣言できます。"
+"具体的には、\\ ``setup``\\ といったメソッドで宣言できるという意味です。"
+"同様に、ヘルパークラスのメソッドで宣言するといったことも可能です。"
 
 # b3d04638403d4663a9491afa4f22893f
 #: ../../interaction_based_testing.rst:269
@@ -499,13 +491,11 @@ msgid ""
 "other interactions. This allows to override interactions declared in, say, a "
 "``setup`` method with interactions declared in a ``then:`` block."
 msgstr ""
-"モックオブジェクトへの呼び出しが発生すると、インタラクションは定義した"
-"順番に評価されます。もし、呼び出しが複数のインタラクションにマッチする場合は"
-"マッチの上限に達してない限り、先に定義したインタラクションが優先して"
-"評価されます。ただし例外があり\\ ``then:``\\ ブロックで定義したインタラクションは"
-"他のインタラクションよりも先に評価されます。これは\\ ``setup``\\ など"
-"他のメソッドやブロックで定義したインタラクションよりも\\ ``then:``\\ ブロックで"
-"定義したインタラクションが先に評価されることを意味しています。"
+"モックオブジェクトへの呼び出しが発生すると、宣言した順番でインタラクションを照合します。"
+"もし、呼び出しが複数のインタラクションにマッチする場合は、インタラクションが実行上限に達してない限り、先に宣言したインタラクションが優先されます。"
+"ただし1つ例外があります。"
+"\\ ``then:``\\ ブロックで宣言したインタラクションは、他のインタラクションより先に照合されます。"
+"これにより、\\ ``setup``\\ メソッドで宣言したインタラクションを、\\ ``then:``\\ ブロックで宣言したインタラクションで上書きできます。"
 
 # 9840aea6a6ce4022a010da2193e74d2d
 #: ../../interaction_based_testing.rst:277
@@ -521,20 +511,19 @@ msgid ""
 "stubbing). Either of them must always be present; ``foo.bar()`` alone will "
 "never be considered an interaction."
 msgstr ""
-"（質問: どのように通常のメソッドではなくインタラクションの定義だと"
-"識別しているのか？）Spockではインタラクションの定義を識別するために、"
-"簡単なルールを持っています。これは、式があった場合に、乗算（\\ ``*``\\ ）、または"
-"左シフト（\\ ``>>``, ``>>>``\\ ）のどちらか含まれていた場合に、インタラクション"
-"の定義として識別します。このような式は、本来もっている式の意味を変えることで、"
-"正しく動作してます。また、多重度の定義（モッキング）と、レスポンス定義（スタビング）"
-"のシンタックスを間違わないようにしてください。これらは必ずどちらかが、"
-"定義されなければなりません。\\ ``foo.bar()``\\ といった単独の式が、インタラクション"
-"として識別されることはありません。"
+"（質問: どのようにインタラクションを識別するのか？） "
+"別の言い方をすると、通常のメソッド呼び出しではなく、どのようにインタラクションの宣言を表現しているか？ "
+"Spockにはインタラクションを識別するための、簡単なシンタックスのルールがあります。"
+"これは、式に乗算（\\ ``*``\\ ）、または左シフト（\\ ``>>``, ``>>>``\\ ）が含まれていた場合、その式をインタラクションとして識別するというルールです。"
+"このような式は、値が持つ意味をほぼ無効にし、式本来の意味を変えることで、正しく動作します。"
+"これらの演算子は、多重度（モッキング時）、またはレスポンスジェネレータ（スタビング時）のシンタックスに対応します。"
+"インタラクションには、この多重度の演算子、またはレスポンスジェネレータの演算子、どちらかが必要です。"
+"\\ ``foo.bar()``\\ といった単独の式は、インタラクションとして扱われません。"
 
 # 08b0975f40aa457688984f769623f0c5
 #: ../../interaction_based_testing.rst:288
 msgid "Declaring Interactions at Mock Creation Time (New in 0.7)"
-msgstr "モック作成時のインタラクション定義（New in 0.7）"
+msgstr "モック作成時のインタラクション宣言（New in 0.7）"
 
 # ec27a82373794705b5ffc83d308d0b29
 #: ../../interaction_based_testing.rst:290
@@ -542,8 +531,7 @@ msgid ""
 "If a mock has a set of \"base\" interactions that don't vary, they can be "
 "declared right at mock creation time::"
 msgstr ""
-"もしモックが動的に変化しない\\ \"基本\"\\ となるインタラクションがある"
-"場合は、モック作成時にインタラクションを定義できます。"
+"もしモックが変化しない\"基底\"となるインタラクションがある場合は、モック作成時にインタラクションを宣言できます。"
 
 # 5afcecf8d1cf499595f8ca06bad1e56b
 #: ../../interaction_based_testing.rst:297
@@ -553,10 +541,9 @@ msgid ""
 "[#targetContext]_) have a target constraint; it's clear from the context "
 "which mock object they belong to."
 msgstr ""
-"この機能は\\ :ref:`スタビング <Stubbing>`\\ により専用の\\ :ref:`スタブ <Stubs>`\\ を作る際にも"
-"便利な機能です。"
-"ここで、インタラクションに対象制約を含んでいない（参照できない\\ [#targetContext]_\\ ）ことに注意してください。"
-"これは作成するモックのコンテキストで動作することが明白なためです。"
+"この機能は、専用の\\ :ref:`スタブ <Stubs>`\\ で\\ :ref:`スタビング <Stubbing>`\\ するのに特に便利な機能です。"
+"ここで、インタラクションに対象制約が含れていない（含められない\\ [#targetContext]_\\ ）ことに注意してください。"
+"これは対象となるモックオブジェクトが明白なためです。"
 
 # 596cb22985674a0586ad32d60a3d92ac
 #: ../../interaction_based_testing.rst:301
@@ -564,7 +551,7 @@ msgid ""
 "Interactions can also be declared when initializing an instance field with a "
 "mock::"
 msgstr ""
-"また、フィールドをモックで初期化する場合にも使用できます。"
+"インスタンスフィールドをモックで初期化する場合にも使用できます。"
 
 # 5bd33a5bc850471c9ecff02914849e40
 #: ../../interaction_based_testing.rst:313
@@ -579,11 +566,8 @@ msgid ""
 "<DeclaringInteractionsAtMockCreationTime>`, this makes it unnecessary to "
 "repeat the target constraint::"
 msgstr ""
-"``Specification.with``\\ ブロックで対象制約を共有することで、"
-"インタラクションのグループ化が行えます。"
-"これは\\ :ref:`モック作成時のインタラクション宣言\\ "
-"<DeclaringInteractionsAtMockCreationTime>`\\ と同じように、"
-"対象制約を繰り返し指定する必要がなくなります。"
+"``Specification.with``\\ ブロックを使用してインタラクション対象を共有することで、インタラクションをグループ化できます。"
+"これは\\ :ref:`モック作成時のインタラクション宣言\\ <DeclaringInteractionsAtMockCreationTime>`\\ と同じように、対象制約を繰り返し指定する必要がなくなります。"
 
 # 0873c63f191e41e096ef18a7f3f03689
 #: ../../interaction_based_testing.rst:324
@@ -605,8 +589,8 @@ msgid ""
 "strictly required, it is customary to declare interactions before "
 "conditions::"
 msgstr ""
-"``then:``\\ ブロックにはインタラクションと、コンディションの両方を同時に含むことが"
-"できます。厳密には必須ではありませんが、コンディションの前にインタラクションを定義するのが一般的です。"
+"``then:``\\ ブロックにインタラクションと、コンディションの両方を含む場合があります。"
+"厳密には必須ではありませんが、慣例的にコンディションの前にインタラクションを宣言します。"
 
 # 11245c092de149da8e987b67a8f3462d
 #: ../../interaction_based_testing.rst:339
@@ -615,9 +599,9 @@ msgid ""
 "subscriber should receive the message exactly once, and the publisher's "
 "message count should be one.\""
 msgstr ""
-"文章としてコードを読んでみると「publisher が 'hello' のメッセージを send したとき、"
-" subscriber は １回 message を receive して、publisher の message count"
-" は １ であるべき」になります。"
+"音読すると"
+"「publisher が 'hello' のメッセージを send したとき、subscriber は 1回 message を receive し、publisher の message count は 1 であるべき」"
+"になります。（訳注: インタラクションを先に宣言した方が、英語として自然に読めると言っている）"
 
 # c349252f6bf84850a9ca2c8056d0ce3c
 #: ../../interaction_based_testing.rst:343
@@ -634,11 +618,12 @@ msgid ""
 "preceding ``when:`` block. In most cases this works out just fine, but "
 "sometimes it can lead to problems::"
 msgstr ""
-"仕組み上、Spockは実行\\ *前*\\ に定義された、インタラクション全ての情報を保持する必要があります。"
-"では、なぜ\\ ``then:``\\ ブロックでインタラクションが"
-"定義可能なのでしょうか？ 内部的には、\\ ``then:``\\ ブロック"
-"で定義したインタラクションは、実行前に\\ ``when:``\\ ブロックの前に移動されます。"
-"これは多くの場合に問題なく動作しますが、特定の条件下では問題を引き起こす場合があります。"
+"仕組み上、Spockは実行\\ *前*\\ に宣言されているインタラクション全ての情報を把握しなければなりません。"
+"では、どのように\\ ``then:``\\ ブロック内でのインタラクション宣言を可能にしているのでしょうか？ "
+"答えはSpockの内部にあります。"
+"Spockは、\\ ``then:`` \\ ブロックのインタラクション宣言を、\\ ``when:``\\ ブロックを処理する直前へ移動します。"
+"これは多くの場合に問題なく動作します。"
+"しかし、特定の条件下では問題が起きます。"
 
 # 806f4afad39f458fa89965f0599c9a68
 #: ../../interaction_based_testing.rst:357
@@ -649,11 +634,9 @@ msgid ""
 "the variable declaration. Hence it will just move the interaction, which "
 "will cause a ``MissingPropertyException`` at runtime."
 msgstr ""
-"この例では期待する引数を変数に受けています（多重度を変数に受ける場合も"
-"場合も同様）。ここでインタラクションを移動すると、インタラクションからこの後で宣言する変数"
-"を参照していることになり、もちろんこのような参照は許容されません。"
-"このように単純にインタラクションを移動しただけでは、実行時に"
-"\\ ``MissingPropertyException``\\ を引き起こします。"
+"ここでは、期待する引数を変数に受けています（多重度を変数に受ける場合も同様）。"
+"しかし、Spockはインタラクションが変数宣言へ参照を持っていると把握するほど賢くありません。"
+"そのため、インタラクションをそのまま移動し、実行時に\\ ``MissingPropertyException``\\ を引き起こします。"
 
 # fea4deb35c7041619cee28bfaa6cf8e5
 #: ../../interaction_based_testing.rst:362
@@ -664,10 +647,9 @@ msgid ""
 "our example, this would have the added benefit that we could use the same "
 "variable for sending the message."
 msgstr ""
-"この問題を解決する一つの方法は変数宣言を（少なくとも）\\ ``when:``\\ ブロックの前"
-"に移動することです（\\ :ref:`データ駆動テスト <DataDrivenTesting>`\\ が好きなユーザは"
-"\\ ``where:``\\ ブロックに変数を移動するかもしれません）。上の例では、副作用として"
-"送信するメッセージと同じ変数を共有できるというメリットもあります。"
+"この問題を解決する一つの方法は、変数宣言を（少なくとも）\\ ``when:``\\ ブロックの前に移動することです"
+"（\\ :ref:`データ駆動テスト <DataDrivenTesting>`\\ が好きなユーザは\\ ``where:``\\ ブロックに変数を移動するかもしれません）。"
+"上記の例では、送信するメッセージと同じ変数を使用できるという利点もあるでしょう。"
 
 # cfab1b38d4fd4f97bcf26017fc4e5985
 #: ../../interaction_based_testing.rst:366
@@ -675,8 +657,7 @@ msgid ""
 "Another solution is to be explicit about the fact that variable declaration "
 "and interaction belong together::"
 msgstr ""
-"もう一つの解決方法は、変数をインタラクションと共に使用することを"
-"明示することです。"
+"他の解決方法は、変数をインタラクションと共に使用することを明示する方法です。"
 
 # d3edff9f195846f5b891ab3172bd633f
 #: ../../interaction_based_testing.rst:377
@@ -684,8 +665,7 @@ msgid ""
 "Since an ``MockingApi.interaction`` block is always moved in its entirety, "
 "the code now works as intended."
 msgstr ""
-"``MockingApi.interaction``\\ ブロックは、常にそのブロック全体が移動するため、"
-"このコードは意図した通りに動作します。"
+"``MockingApi.interaction``\\ ブロックは、常にブロック全体が移動するため、このコードは意図したとおりに動作します。"
 
 # 25be090c816b481c9bd635321510790b
 #: ../../interaction_based_testing.rst:380
@@ -698,8 +678,7 @@ msgid ""
 "Interactions declared in a ``then:`` block are scoped to the preceding "
 "``when:`` block::"
 msgstr ""
-"``then:``\\ ブロックで定義したインタラクションは、直前の\\ ``when:``\\ "
-"ブロックのみがスコープの対象となります。"
+"``then:``\\ ブロックで宣言したインタラクションは、直前の\\ ``when:``\\ ブロックをスコープとします。"
 
 # f40bfad2d9b641a381907a35e3292ade
 #: ../../interaction_based_testing.rst:396
@@ -708,9 +687,7 @@ msgid ""
 "execution of the first ``when:`` block, and ``\"message2\"`` during "
 "execution of the second ``when:`` block."
 msgstr ""
-"これは最初の\\ ``when:``\\ ブロックで\\ ``subscriber``\\ が\\ ``\"message1\"``\\ "
-"を受信した確認を行い、次の\\ ``when:``\\ で\\ ``\"message2\"``\\ を受信した確認を"
-"行なっています。"
+"これは最初の\\ ``when:``\\ ブロックで\\ ``subscriber``\\ が\\ ``\"message1\"``\\ を受信し、次の\\ ``when:``\\ ブロックで\\ ``\"message2\"``\\ を受信した確認をしています。"
 
 # 9d56f46a1c244f0e80cbb8d36e9adf92
 #: ../../interaction_based_testing.rst:399
@@ -718,8 +695,7 @@ msgid ""
 "Interactions declared outside a ``then:`` block are active from their "
 "declaration until the end of the containing feature method."
 msgstr ""
-"``then:``\\ ブロックの外で宣言したインタラクションは、そのフィーチャメソッド"
-"が完了するまで有効になります。"
+"``then:``\\ ブロックの外で宣言したインタラクションは、そのフィーチャメソッドが完了するまで有効です。"
 
 # bb4888b632b14848946afcddbbf88b82
 #: ../../interaction_based_testing.rst:402
@@ -729,11 +705,9 @@ msgid ""
 "``cleanupSpec`` method. Likewise, mock objects should not be stored in "
 "static or ``@Shared`` fields."
 msgstr ""
-"また、インタラクションは常に特定のフィーチャメソッドに対してスコープを"
-"持ちます。そのため、インタラクションをstaticメソッド、\\ ``setupSpec``\\  メソッド、"
-"また\\ ``cleanupSpec``\\ メソッドで定義することはできません。"
-"このような理由により、static、または\\ ``@Shared``\\ フィールドにも"
-"モックオブジェクトを設定すべきではありません。"
+"また、インタラクションは常に特定のフィーチャメソッドへスコープを持ちます。"
+"そのため、インタラクションをstaticメソッド、\\ ``setupSpec``\\  メソッド、または\\ ``cleanupSpec``\\ メソッドで宣言することはできません。"
+"同様に、モックオブジェクトはstatic、または\\ ``@Shared``\\ フィールドに保持すべきではありません。"
 
 # 08444aea9ae145ffbc249d12094622be
 #: ../../interaction_based_testing.rst:407
@@ -748,11 +722,9 @@ msgid ""
 "than required. The former case is detected right when the invocation "
 "happens, and causes a ``TooManyInvocationsError``::"
 msgstr ""
-"モックベースのテストが失敗する理由は主に2つです。期待したインタラクション"
-"以上に呼び出しが発生するか、もしくは期待したインタラクションに"
-"呼び出しが満たいない場合です。"
-"前者の場合は、\\ ``TooManyInvocationsError``\\ が発生し、"
-"実際に発生した呼び出し回数が表示されます。"
+"モックベースのテストが失敗する主な原因は2つあります。"
+"インタラクションを許可した以上の実行がマッチした場合、もしくは意図したよりもマッチした実行が少ない場合です。"
+"前者の場合は、その状況を検知すると、\\ ``TooManyInvocationsError``\\ を発生させます。"
 
 # e00f4e234867490b83796ef19b8004aa
 #: ../../interaction_based_testing.rst:419
@@ -761,10 +733,7 @@ msgid ""
 "show all invocations matching the interaction in question (new in Spock "
 "0.7)::"
 msgstr ""
-"このようなエラーが発生した場合は、"
-"期待した以上に呼び出しが発生した原因の解析が容易に行えるよう、"
-"呼び出しに関連する全てのインタラクションを表示します(new in Spock "
-"0.7)。"
+"なぜマッチした呼び出しが多すぎたのか解析しやすいように、Spockは問題となるインタラクションにマッチしたすべての呼び出しを表示します（new in Spock 0.7）。"
 
 # 7c9ee5fb12564f83bd5fc73a83cbee46
 #: ../../interaction_based_testing.rst:427
@@ -775,11 +744,9 @@ msgid ""
 "into a single line of output, the first ``receive(\"hello\")`` may well have "
 "occurred before the ``receive(\"goodbye\")``."
 msgstr ""
-"この出力によると\\ ``receive(\"hello\")``\\ が原因となり\\ ``TooManyInvocationsError``\\ "
-"発生しています。ここでは\\ ``subscriber.receive(\"hello\")``\\ の呼び出しで"
-"エラーがあったということに、情報が集約されてしまうことに注意してください。"
-"``receive(\"hello\")``\\ で先にエラーとなると\\ ``receive(\"goodbye\")``\\ "
-"にもエラーがあった場合と区別が付きません。"
+"この出力によると、\\ ``receive(\"hello\")``\\ の呼び出しの1つが\\ ``TooManyInvocationsError``\\ を引き起こしています。"
+"ここで、\\ ``subscriber.receive(\"hello\")``\\ のような2つの呼び出しは、1行に集約されて表示されます。"
+"最初の\\ ``subscriber.receive(\"hello\")``\\ は\\ ``receive(\"goodbye\")``\\ の前に発生していたかもしれませんが、この出力からは区別できません。"
 
 # b71364945e7b485588aacef64bae4cd1
 #: ../../interaction_based_testing.rst:431
@@ -788,9 +755,8 @@ msgid ""
 "execution of the ``when`` block has completed. (Until then, further "
 "invocations may still occur.) It causes a ``TooFewInvocationsError``::"
 msgstr ""
-"2つめの場合（期待したインタラクションに呼び出しが満たいない場合）は、\\ ``when``\\ ブロックの実行が"
-"完了した時点でエラーを検出します（終了するまでは呼び出しの可能性があるため）。"
-"エラーの場合は\\ ``TooFewInvocationsError``\\ が発生します。"
+"2つめの場合（意図したよりも実行が少ない場合）は、\\ ``when``\\ ブロックの実行が完了した時点でのみ検出できます（終了するまでは呼び出しの可能性があるため）。"
+"検出した場合は\\ ``TooFewInvocationsError``\\ を発生させます。"
 
 # a975655d13a54dcfb6b77527448c6050
 #: ../../interaction_based_testing.rst:438
@@ -800,10 +766,9 @@ msgid ""
 "on a different mock object, or a different method was called \"instead\" of "
 "this one; in either case, a ``TooFewInvocationsError`` error will occur."
 msgstr ""
-"これはメソッドの呼び出しが全くなかったということではありません。"
-"同じメソッドが、他の引数で呼び出された、異なるモックオブジェクトで呼び出された、もしくは"
-"\"別の\"メソッドが呼び出されたといったことが考えられます。"
-"これらいずれの場合でも、\\ ``TooFewInvocationsError``\\ のエラーが発生します。"
+"これはメソッドの呼び出しが、一切なかったということではありません。"
+"同じメソッドが、他の引数で呼び出された、異なるモックオブジェクトで呼び出された、もしくは、\"別の\"メソッドが呼び出された、といったことが考えられます。"
+"これらいずれの場合でも、\\ ``TooFewInvocationsError``\\ が発生します。"
 
 # a5c3cbfc0f564150b51e22dca4ba8e71
 #: ../../interaction_based_testing.rst:444
@@ -814,10 +779,9 @@ msgid ""
 "(new in Spock 0.7). In particular, invocations that match everything but the "
 "interaction's arguments will be shown first::"
 msgstr ""
-"なぜ期待した呼び出しが行われなかったかを簡単に解析できるように、"
-"インタラクションに一致しない呼び出しがあった場合は、"
-"呼び出しに類似している順に、全てのインタラクションを表示します（new in Spock 0.7）。"
-"具体的には引数が一致するインタラクションを最初に表示します。"
+"なぜ意図しない呼び出しが代わりに起きたのか解析しやすいよう、Spockはどのインタラクションにもマッチしなかったすべての呼び出しを表示します。"
+"この呼び出しは、問題のあるインタラクションに類似している順番で表示されます（new in Spock 0.7）。"
+"特に、インタラクションの引数以外がすべて一致する呼び出しが最初に表示されます。"
 
 # 45d741277a17466ba6334bd9d7117582
 #: ../../interaction_based_testing.rst:454
@@ -831,10 +795,9 @@ msgid ""
 "time. To avoid over-specification, Spock defaults to allowing any invocation "
 "order, provided that the specified interactions are eventually satisfied::"
 msgstr ""
-"多くの場合にメソッドの呼び出し順序は重要ではありません。また実行順序は時間と共に変更される"
-"可能性が高いものでもあります。Spockはデフォルトでは、over-specificationを避けるため、"
-"最終的に定義したインタラクションすべてが満たされていれば、"
-"どのような実行順序でも許容します。"
+"多くの場合に、正確なメソッドの実行順序に意味はありません。"
+"また、この実行順序は時間と共に変わる可能性があります。"
+"over-specificationを避けるため、Spockはデフォルトで、最終的に宣言したインタラクションすべてが満たされれば、どのような実行順序も許容します。"
 
 # f2530818dd4d47ceab5ddefbd574f563
 #: ../../interaction_based_testing.rst:463
@@ -843,9 +806,9 @@ msgid ""
 "\"``, ``\"hello\"`` ``\"goodbye\"`` ``\"hello\"``, and ``\"goodbye\"`` ``"
 "\"hello\"`` ``\"hello\"`` will satisfy the specified interactions."
 msgstr ""
-"ここで呼び出し順序は ``\"hello\"`` ``\"hello\"`` ``\"goodbye"
+"ここで、呼び出し順序が ``\"hello\"`` ``\"hello\"`` ``\"goodbye"
 "\"``、``\"hello\"`` ``\"goodbye\"`` ``\"hello\"``、または ``\"goodbye\"`` ``"
-"\"hello\"`` ``\"hello\"`` のいずれの場合も定義したインタラクションを満たしています。"
+"\"hello\"`` ``\"hello\"`` いずれの場合も宣言したインタラクションを満たします。"
 
 # 2374f3bb6a0743f4a17590dae87df65b
 #: ../../interaction_based_testing.rst:466
@@ -853,8 +816,7 @@ msgid ""
 "In those cases where invocation order matters, you can impose an order by "
 "splitting up interactions into multiple ``then:`` blocks::"
 msgstr ""
-"実行順序が重要な意味をもつ場合は、インタラクションを複数の\\ ``then:``\\ "
-"ブロックに分割することで、順序の検証が行えます。"
+"実行順序に意味がある場合は、インタラクションを分割した複数の\\ ``then:``\\ ブロックの順序で検証できます。"
 
 # 0847a86faa6a477ba933c58efc5fef87
 #: ../../interaction_based_testing.rst:475
@@ -863,10 +825,8 @@ msgid ""
 "\"goodbye\"``. In other words, invocation order is enforced *between* but "
 "not *within* ``then:`` blocks."
 msgstr ""
-"これは\\ ``\"goodby\"``\\ を受信する前に、\\ ``\"hello\"``\\ を2回"
-"受信することを検証しています。このように\\ ``then:``\\ ブロック\\ **内**\\ では"
-"実行順序の検証を行いませんが、\\ ``then:``\\ ブロックを複数に分割することで、"
-"ブロック\\ **間**\\ の実行順序の検証が行えます。"
+"これは\\ ``\"goodby\"``\\ を受信する前に、\\ ``\"hello\"``\\ を2回受信することを検証します。"
+"別の言い方をすると、\\ ``then:``\\ ブロック\\ *内*\\ ではなく、\\ ``then:``\\ ブロック\\ *間*\\ で実行順序を強制させます。"
 
 # 147969b5b4aa478f87f661478a3d9b1b
 #: ../../interaction_based_testing.rst:478
@@ -875,9 +835,8 @@ msgid ""
 "as ``and:`` is only meant for documentation purposes and doesn't carry any "
 "semantics."
 msgstr ""
-"\\ ``then:``\\ ブロックを\\ ``and:``\\ を使用して分割した場合は、順序の検証を"
-"行なっていることにはなりません。\\ ``and:``\\ は単なるドキュメンテーション"
-"目的のために存在しており、実行時の動作には何も影響を与えません。"
+"\\ ``then:``\\ ブロックを\\ ``and:``\\ で分割した場合は、順序を指定していることにはなりません。"
+"\\ ``and:``\\ はドキュメンテーション目的のためだけに存在しており、それ以外の意味はありません。"
 
 # 2dc1ec483ab14dbbbdff3be437004502
 #: ../../interaction_based_testing.rst:482
@@ -893,11 +852,10 @@ msgid ""
 "class path. If either of these libraries is missing from the class path, "
 "Spock will gently let you know."
 msgstr ""
-"Spockではインタフェースの他に、クラスのモッキングもサポートしています。"
-"クラスのモッキングも、インターフェースと同じように使用できます。ただし"
-"クラスをモッキングする場合は\\ ``cglib-nodep-2.2``\\ 以上、\\ ``objenesis-1.2``\\ 以上が、"
-"クラスパスに含まれている必要があります。もしこれらのライブラリが、"
-"クラスパスに含まれていない場合はSpockが警告を出力します。"
+"インタフェースの他に、Spockはクラスのモッキングもサポートしています。"
+"クラスのモッキングも、インターフェースのモッキングと同じように使用できます。"
+"ただし、クラスパスに\\ ``cglib-nodep-2.2``\\ 以上、\\ ``objenesis-1.2``\\ 以上が必要になります。"
+"もしこれらのライブラリいずれかが、クラスパスに含まれていない場合は、Spockがやさしくそれを知らせるでしょう。"
 
 # d07bd4f127f24d909709390ed6b4c0cd
 #: ../../interaction_based_testing.rst:492
@@ -912,7 +870,7 @@ msgid ""
 "the method is going to be called; you just want it to return some value, or "
 "perform some side effect, *whenever* it gets called."
 msgstr ""
-"スタビングとは特定のメソッド呼び出しに対するレスポンスを定義することです。"
+"スタビングとは特定のメソッド呼び出しに対するレスポンスを宣言することです。"
 "メソッドをスタビングする場合は、そのメソッドが何回呼ばれるかを気にせず、"
 "\\ *いつ呼び出されても*\\ 特定の値を返したり、何かの副作用が働くように"
 "します。"
@@ -968,7 +926,7 @@ msgstr ""
 "\\ （詳細は\\ :ref:`WhereToDeclareInteractions`\\ を参照）。"
 "もし、モックオブジェクトをスタブとしてのみ使用する場合は、"
 "\\ :ref:`モック作成時 <DeclaringInteractionsAtMockCreationTime>`\\ "
-"や\\ ``setup:``\\ ブロック内でインタラクションを定義するのが一般的です。"
+"や\\ ``setup:``\\ ブロック内でインタラクションを宣言するのが一般的です。"
 
 # 8d45e48c3219471bb25d3e9b0c0c4397
 #: ../../interaction_based_testing.rst:527
@@ -989,7 +947,7 @@ msgid ""
 "To return different values for different invocations, use multiple "
 "interactions::"
 msgstr ""
-"呼び出し毎に異なる値を返すには、それぞれ個別のインタラクションとして定義します。"
+"呼び出し毎に異なる値を返すには、それぞれ個別のインタラクションとして宣言します。"
 
 # d4f8bf87df614b639406ac0e8625e202
 #: ../../interaction_based_testing.rst:538
@@ -1064,7 +1022,7 @@ msgid ""
 "closure parameters [#closureDestructuring]_::"
 msgstr ""
 "しかしほとんどのケースでは、メソッドの引数に直接アクセスできたほうが"
-"便利でしょう。クロージャの引数を\\ *型付き*\\ で1つ以上定義した場合は、"
+"便利でしょう。クロージャの引数を\\ *型付き*\\ で1つ以上宣言した場合は、"
 "メソッドの引数がそれぞれクロージャの引数にマップされます。"
 "\\ [#closureDestructuring]_\\ "
 
@@ -1157,8 +1115,8 @@ msgid ""
 "stubbing and mocking into two separate statements will *not* work::"
 msgstr ""
 "モッキングとスタビングを同じメソッドに対して行う場合は、同じインタラクションとして"
-"定義する必要があります。これは、Mockitoのようにモッキングとスタビングを、"
-"別々に定義することが\\ *できない*\\ ということです。"
+"宣言する必要があります。これは、Mockitoのようにモッキングとスタビングを、"
+"別々に宣言することが\\ *できない*\\ ということです。"
 
 # b6f2c8d0b2f44fdbab3d1c66425b67c2
 #: ../../interaction_based_testing.rst:617
@@ -1171,11 +1129,11 @@ msgid ""
 "the ``setup:`` block will never get a chance to match."
 msgstr ""
 ":ref:`WhereToDeclareInteractions`\\ で説明したように\\ ``receive``\\ が呼ばれると、"
-"\\ ``then:``\\ ブロックで定義したインタラクションが始めに評価されます。"
-"このインタラクションは、特定のレスポンスを定義していないため、メソッドの"
+"\\ ``then:``\\ ブロックで宣言したインタラクションが始めに評価されます。"
+"このインタラクションは、特定のレスポンスを宣言していないため、メソッドの"
 "デフォルトの値（この場合は\\ `null`\\ ）を返します（これはSpockがlenientなモック"
 "のアプローチを採用しているためです）。このため、\\ ``setup:``\\ ブロックで"
-"定義したスタビングのインタラクションは評価されることがありません。"
+"宣言したスタビングのインタラクションは評価されることがありません。"
 
 # cbc4d7b4da774f2bbf80c1bf20bf526e
 #: ../../interaction_based_testing.rst:623
@@ -1184,7 +1142,7 @@ msgid ""
 "interaction."
 msgstr ""
 "同じメソッド呼び出しに対するモッキングとスタビングは、同じインタラクションとして"
-"定義する必要があります。"
+"宣言する必要があります。"
 
 # 665c938e1ff047d19f8e8a50f468bbdd
 #: ../../interaction_based_testing.rst:628
@@ -1229,7 +1187,7 @@ msgid ""
 "If a stub invocation matches a *mandatory* interaction (like ``1 * foo.bar()"
 "``), an ``InvalidSpecException`` is thrown."
 msgstr ""
-"もしスタブでインタラクションを定義した場合は（\\ ``1 * foo.bar()``\\ のように）、"
+"もしスタブでインタラクションを宣言した場合は（\\ ``1 * foo.bar()``\\ のように）、"
 "\\ ``InvalidSpecException``\\ がスローされます。 "
 
 # 0b24002010864cf1abe733392c4a1364
@@ -1273,7 +1231,7 @@ msgid ""
 "<DeclaringInteractionsAtMockCreationTime>` particularly attractive::"
 msgstr ""
 "スタブは\\ :ref:`モック作成時のインタラクション宣言<DeclaringInteractionsAtMockCreationTime>`\\ "
-"と同じように、インタラクションの固定セットを定義することができます。"
+"と同じように、インタラクションの固定セットを宣言することができます。"
 
 # 0ef90c7c6fd64d84905d7e68d3ad1720
 #: ../../interaction_based_testing.rst:668
@@ -1481,7 +1439,7 @@ msgstr ""
 "次に、この本物のsubscriber実装の型を指定して、グローバルモックを作成します。"
 "このようにすることで本物のsubscriberに対する全てのメソッド呼び出しが、"
 "モックオブジェクトへ送られるようになります。また、ここでモックオブジェクトのインスタンスを"
-"publisherに設定していません。このモックオブジェクトは、インタラクションを定義するためだけに使用します。"
+"publisherに設定していません。このモックオブジェクトは、インタラクションを宣言するためだけに使用します。"
 
 # aea9e744fecf4810ba59e56bcb4d5f23
 #: ../../interaction_based_testing.rst:780
